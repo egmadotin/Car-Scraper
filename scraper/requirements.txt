@@ -1,0 +1,11 @@
+playwright
+playwright-stealth
+pymongo
+cloudinary
+python-dotenv
+beautifulsoup4
+requests
+fastapi
+uvicorn
+jinja2
+motor
