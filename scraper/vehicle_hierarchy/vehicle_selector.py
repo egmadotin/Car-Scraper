@@ -7,6 +7,7 @@ from urllib.parse import urlparse, parse_qs
 from playwright.sync_api import sync_playwright
 from playwright_stealth.stealth import Stealth
 from pymongo import MongoClient
+
 import cloudinary
 import cloudinary.uploader
 from bson import ObjectId
@@ -70,11 +71,26 @@ class QualifierBuffer:
 class VehicleScraper:
     def __init__(self, headless=False, target_year=None, force=False):
         self.pw = sync_playwright().start()
-        self.browser = self.pw.chromium.launch(headless=headless)
+        
+        # Use system Chrome and disable problematic features to help VPN/Connection
+        self.browser = self.pw.chromium.launch(
+            headless=headless,
+            channel="chrome",
+            args=[
+                '--disable-features=UseDNSHttpsSvcb',
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-infobars',
+                '--window-position=0,0',
+                '--ignore-certificate-errors',
+                '--ignore-certificate-errors-spki-list'
+            ]
+        )
         self.session_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "session.json")
         
         context_args = {
-            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "viewport": {"width": 1920, "height": 1080}
         }
         if os.path.exists(self.session_path):
             try:
@@ -108,13 +124,32 @@ class VehicleScraper:
             api_secret=os.getenv("CLOUDINARY_API_SECRET")
         )
 
+
     def random_delay(self, min_s=1.5, max_s=3.0):
         time.sleep(random.uniform(min_s, max_s))
 
     def login(self):
         # Check if already logged in
         logger.info("Checking session status...")
+        
+        # Helper to navigate with retries for connection reset
+        def navigate_with_retry(url, retries=5):
+            for i in range(retries):
+                try:
+                    logger.info(f"  Attempting to reach {url} (Attempt {i+1})...")
+                    self.page.goto(url, wait_until="load", timeout=60000)
+                    return True
+                except Exception as e:
+                    logger.warning(f"  Navigation attempt {i+1} failed: {e}")
+                    # Handle common VPN/Network reset errors
+                    if any(err in str(e) for err in ["ERR_CONNECTION_RESET", "ERR_CONNECTION_CLOSED", "ERR_NETWORK_CHANGED", "ERR_TIMED_OUT"]):
+                        time.sleep(5 * (i + 1)) # Backoff
+                        continue
+                    if i == retries - 1: raise e
+            return False
+
         try:
+            # Try accessing index first (session check)
             self.page.goto("https://www.prodemand.com/Main/Index", wait_until="load", timeout=30000)
             if self.page.is_visible("#vehicleSelectionButton") or self.page.is_visible("#qualifierValueSelector") or self.page.is_visible("#ContentRegion"):
                 logger.info("Already logged in via session.")
@@ -123,15 +158,7 @@ class VehicleScraper:
             pass
 
         logger.info("Authenticating...")
-        for attempt in range(3):
-            try:
-                # Use the user-provided landing page
-                self.page.goto("https://prodemand.com/", wait_until="load", timeout=60000)
-                break
-            except Exception as e:
-                logger.warning(f"  Login goto attempt {attempt+1} failed: {e}")
-                if attempt == 2: raise
-                time.sleep(5)
+        navigate_with_retry("https://prodemand.com/")
         
         if self.page.is_visible("#onetrust-accept-btn-handler"):
             logger.info("Accepting OneTrust cookies...")
@@ -286,131 +313,440 @@ class VehicleScraper:
     def click_use_vehicle(self):
         logger.info("Transitioning to 1SEARCH PLUS Dashboard...")
         try:
-            # 1. Wait for the button to be stable
             self.random_delay(2, 4)
-            
-            # 2. Try multiple selectors for "Use This Vehicle"
-            selectors = [
-                "#useThisVehicleButton",
-                "input[value='Use This Vehicle']",
-                "button:has-text('Use This Vehicle')",
-                ".button.blue",
-                ".grey.button[value='Use This Vehicle']"
-            ]
-            
+            selectors = ["#useThisVehicleButton", "input[value='Use This Vehicle']", "button:has-text('Use This Vehicle')"]
             use_btn = None
             for sel in selectors:
-                try:
-                    el = self.page.locator(sel).first
-                    if el.is_visible():
-                        use_btn = el
-                        logger.info(f"  Found 'Use This Vehicle' button with selector: {sel}")
-                        break
-                except: continue
-            
+                el = self.page.locator(sel).first
+                if el.is_visible():
+                    use_btn = el
+                    break
             if not use_btn:
-                # Try finding in frames as a last resort
                 use_btn = self.find_element_in_frames("input[value='Use This Vehicle'], #useThisVehicleButton")
 
             if use_btn:
                 use_btn.click(force=True)
                 logger.info("  'Use This Vehicle' clicked. Waiting for dashboard...")
-                
-                # 3. Wait for dashboard indicators
-                # #ContentRegion is the main container for the dashboard
-                # .dashboard-tabs or .tab-container are also common
-                try:
-                    self.page.wait_for_selector("#ContentRegion, .dashboard-tabs, .search-box-container", timeout=45000)
-                    logger.info("  Dashboard loaded.")
-                    return True
-                except Exception as e_wait:
-                    logger.warning(f"  Timed out waiting for dashboard indicators: {e_wait}")
-                    # Check if we are actually there but indicators changed
-                    if self.page.is_visible("#ContentRegion") or "Main/Index" in self.page.url:
-                        return True
-                    return False
-            else:
-                logger.warning("  'Use This Vehicle' button not found.")
-                self.page.screenshot(path="use_vehicle_not_found.png")
-                return False
+                # Wait for the main dashboard container
+                self.page.wait_for_selector("#ContentRegion, #quickLinkRegion", timeout=45000)
+                # Extra grace period for JS initialization
+                self.page.wait_for_load_state("networkidle")
+                self.random_delay(5, 8)
+                return True
+            return False
         except Exception as e:
             logger.error(f"  Failed to transition to dashboard: {e}")
             return False
 
-    def find_element_in_frames(self, selector):
-        try:
-            el = self.page.locator(selector).first
-            if el.is_visible(): return el
-        except: pass
+    def process_quick_links(self, vehicle_id):
+        logger.info("Processing Dashboard Quick Links...")
         
-        for frame in self.page.frames:
-            try:
-                el = frame.locator(selector).first
-                if el.is_visible(): return el
-            except: continue
-        return None
+        # Mandatory wait for dashboard initialization
+        self.random_delay(8, 12)
+        
+        # Wait for the quick link container specifically
+        ql_container = self.find_element_in_frames("#quickLinkRegion, .quickAccess")
+        if not ql_container:
+            logger.warning("  [WARNING] Quick Link Region NOT found. Taking diagnostic screenshot.")
+            self.page.screenshot(path="dashboard_missing_links.png")
+            # Final attempt to find it after another delay
+            self.random_delay(5, 8)
+            ql_container = self.find_element_in_frames("#quickLinkRegion, .quickAccess")
+        
+        if not ql_container:
+            logger.error("  [ERROR] Could not locate dashboard navigation. Skipping this vehicle.")
+            return
 
-    def extract_all_tabs(self, vehicle_id):
-        logger.info(f"Extracting technical data for vehicle {vehicle_id}...")
-        
-        # Wait for dashboard content to settle
-        self.random_delay(3, 5)
-        
-        # 1. Capture Analytics from Landing Page
-        self.extract_dashboard_analytics(vehicle_id)
-        
-        # 2. Tab Routing
-        tabs = [
-            ("Technical Bulletins", self.handle_tsbs),
-            ("Common Specs", self.handle_specs),
-            ("Driver Assist ADAS", self.handle_adas),
-            ("Fluid Capacities", self.handle_fluids),
-            ("Tire Information & Lifting Points", self.handle_tires_lifting),
-            ("Reset Procedures", self.handle_resets),
-            ("DTC Index", self.handle_dtcs),
-            ("Wiring Diagrams", self.handle_wiring),
-            ("Component Locations", self.handle_locations),
-            ("Component Tests", self.handle_tests),
-            ("Service Manual", self.handle_service_manual)
+        quick_links = [
+            ("Technical Bulletins", "technicalBulletinAccess", self.handle_tsbs),
+            # ("Common Specs", "commonSpecsAccess", self.handle_specs),
+            # ("Driver Assist ADAS", "adasAccess", self.handle_adas),
+            # ("Fluid Capacities", "fluidsQuickAccess", self.handle_fluids),
+            # ("Tire Information & Lifting Points", "tpmsTireFitmentQuickAccess", self.handle_tires_lifting),
+            # ("Reset Procedures", "resetProceduresAccess", self.handle_resets),
+            # ("DTC Index", "dtcIndexAccess", self.handle_dtcs),
+            # ("Wiring Diagrams", "wiringDiagramsAccess", self.handle_wiring),
+            # ("Component Locations", "electricalComponentLocationAccess", self.handle_locations),
+            # ("Component Tests", "ctmQuickAccess", self.handle_tests),
+            # ("Service Manual", "serviceManualQuickAccess", self.handle_service_manual)
         ]
         
-        for tab_name, handler in tabs:
+        for name, element_id, handler in quick_links:
+            selector = f"#{element_id}"
             try:
-                logger.info(f"  [Tab] Processing {tab_name}...")
-                
-                # Search across all frames for the tab
-                target = None
-                tab_selectors = [
-                    f"xpath=//div[contains(., '{tab_name}') and contains(@class, 'tab')]",
-                    f"xpath=//span[contains(text(), '{tab_name}')]/parent::div",
-                    f"text='{tab_name}'",
-                    f".tab:has-text('{tab_name}')",
-                    f"div:has-text('{tab_name}')"
-                ]
-                
-                for sel in tab_selectors:
-                    target = self.find_element_in_frames(sel)
-                    if target and target.is_visible():
-                        break
-
-                if target and target.is_visible():
-                    # Check if it's disabled
-                    is_disabled = "disabled" in (target.get_attribute("class") or "").lower() or "gray" in (target.get_attribute("style") or "").lower()
+                el = self.find_element_in_frames(selector)
+                if el and el.is_visible():
+                    is_disabled = el.get_attribute("disabled") == "disabled" or "disabled" in (el.get_attribute("class") or "").lower()
                     if is_disabled:
-                        logger.info(f"    Tab {tab_name} is disabled (grayed out).")
+                        logger.info(f"    [Skip] {name} is disabled.")
                         continue
-
-                    logger.info(f"    Clicking tab: {tab_name}")
-                    target.click(force=True)
-                    self.page.wait_for_load_state("networkidle")
-                    self.random_delay(2, 4)
+                    
+                    logger.info(f"    [Click] {name}...")
+                    el.click(force=True)
+                    self.random_delay(4, 7)
+                    
+                    # Call the specific handler for this tab
                     handler(vehicle_id)
+                    
+                    # Close the modal after extraction
                     self.close_content_modal()
                 else:
-                    logger.info(f"    Tab {tab_name} not found.")
+                    logger.info(f"    [Not Found] {name}")
             except Exception as e:
-                logger.error(f"    Error processing tab {tab_name}: {e}")
+                logger.warning(f"    Error clicking {name}: {e}")
                 self.close_content_modal()
+
+    def handle_tsbs(self, vehicle_id):
+        logger.info("    Extracting Technical Bulletins...")
+        try:
+            # Wait for list to appear
+            self.page.wait_for_selector(".articleListContent, #categorySelectorDiv", timeout=15000)
+            
+            # Find all article links
+            # Using a more robust selector that includes text
+            links = self.page.locator(".articleListContent a, #categorySelectorDiv a").all()
+            logger.info(f"      Found {len(links)} TSB items.")
+            
+            for index, link in enumerate(links):
+                try:
+                    title = link.inner_text().strip()
+                    if not title:
+                        # Try to get from data-name or title attribute
+                        title = link.get_attribute("title") or link.get_attribute("data-name") or f"Article_{index}"
+                    
+                    logger.info(f"      [{index+1}/{len(links)}] Extracting: {title}")
+                    
+                    # Ensure no blocking modal from previous attempt
+                    self.close_content_modal()
+                    
+                    link.scroll_into_view_if_needed()
+                    link.click(force=True)
+                    self.random_delay(3, 6)
+                    
+                    viewer = self.find_element_in_frames("#contentViewerDiv, .article-container")
+                    if viewer:
+                        # 1. Capture HTML and Process/Upload Images to Cloudinary
+                        updated_html, images = self.process_images_in_content(viewer, vehicle_id, title)
+                        
+                        # 2. Store in DB
+                        self.db.tsbs.update_one(
+                            {"vehicle_id": vehicle_id, "title": title},
+                            {
+                                "$set": {
+                                    "title": title,
+                                    "content_html": updated_html,
+                                    "images": images,
+                                    "timestamp": time.time()
+                                }
+                            },
+                            upsert=True
+                        )
+                    
+                    self.close_content_modal()
+                    self.random_delay(1, 2)
+                    
+                except Exception as e_inner:
+                    logger.warning(f"        Failed to extract TSB '{title}': {e_inner}")
+                    self.close_content_modal()
+
+        except Exception as e:
+            logger.error(f"    TSB extraction error: {e}")
+
+    def process_images_in_content(self, container_loc, vehicle_id, title_context):
+        processed_images = []
+        try:
+            # We'll use the HTML content and replace URLs
+            content_html = container_loc.inner_html()
+            
+            img_els = container_loc.locator("img").all()
+            for i, img in enumerate(img_els):
+                src = img.get_attribute("src")
+                if src and not src.startswith("data:"):
+                    # Upload to Cloudinary
+                    logger.info(f"        Uploading image {i+1} to Cloudinary...")
+                    c_res = self.upload_image(src, folder=f"tsbs/{vehicle_id}")
+                    if c_res:
+                        cloud_url = c_res.get("secure_url")
+                        processed_images.append({
+                            "original_src": src,
+                            "cloudinary_url": cloud_url,
+                            "alt": img.get_attribute("alt") or ""
+                        })
+                        # Replace in HTML
+                        content_html = content_html.replace(src, cloud_url)
+            
+            return content_html, processed_images
+        except Exception as e:
+            logger.warning(f"      Image processing error: {e}")
+            return container_loc.inner_html(), []
+
+    def upload_image(self, url, folder="general"):
+        try:
+            # If URL is relative, try to make it absolute or just skip if we can't
+            if not url.startswith("http"):
+                # Handle relative URLs if needed, but often they are full URLs from the API
+                return None
+            
+            res = cloudinary.uploader.upload(url, folder=folder)
+            return res
+        except Exception as e:
+            logger.warning(f"    Cloudinary upload failed: {e}")
+            return None
+
+    def handle_specs(self, vehicle_id):
+        logger.info("    Extracting Specs...")
+        data = self.extract_table_data("table")
+        if data:
+            self.db.specs.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
+
+    def handle_adas(self, vehicle_id):
+        logger.info("    Extracting ADAS...")
+        data = self.extract_table_data("table")
+        if data:
+            self.db.adas.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
+
+    def handle_fluids(self, vehicle_id):
+        logger.info("    Extracting Fluids...")
+        data = self.extract_table_data("table")
+        if data:
+            self.db.fluids.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
+
+    def handle_tires_lifting(self, vehicle_id):
+        logger.info("    Extracting Tires...")
+        img_el = self.find_element_in_frames("img[src*='lifting'], img[src*='tire']")
+        img_url = img_el.get_attribute("src") if img_el else None
+        data = self.extract_table_data("table")
+        self.db.tires_lifting.update_one(
+            {"vehicle_id": vehicle_id},
+            {"$set": {"image_url": img_url, "specs": data}},
+            upsert=True
+        )
+
+    def handle_resets(self, vehicle_id):
+        logger.info("    Extracting Resets...")
+        links = self.page.locator(".articleListContent a, .reset-link").all()
+        for link in links:
+            title = link.inner_text().strip()
+            link.click()
+            self.random_delay(2, 4)
+            viewer = self.find_element_in_frames("#contentViewerDiv, .reset-content")
+            if viewer:
+                self.db.resets.update_one(
+                    {"vehicle_id": vehicle_id, "procedure": title},
+                    {"$set": {"content_html": viewer.inner_html()}},
+                    upsert=True
+                )
+            self.close_content_modal()
+
+    def handle_dtcs(self, vehicle_id):
+        logger.info("    Extracting DTCs...")
+        data = self.extract_table_data("table")
+        if data:
+            self.db.dtcs.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
+
+    def handle_wiring(self, vehicle_id):
+        logger.info("    Extracting Wiring...")
+        links = self.page.locator(".articleListContent a, .wiring-link").all()
+        for link in links:
+            name = link.inner_text().strip()
+            link.click()
+            self.random_delay(3, 5)
+            img = self.find_element_in_frames("img[src*='diagram'], .wiring-diagram img")
+            if img:
+                self.db.wiring.update_one(
+                    {"vehicle_id": vehicle_id, "system": name},
+                    {"$set": {"diagram_url": img.get_attribute("src")}},
+                    upsert=True
+                )
+            self.close_content_modal()
+
+    def handle_locations(self, vehicle_id):
+        logger.info("    Extracting Locations...")
+        links = self.page.locator(".articleListContent a, .location-link").all()
+        for link in links:
+            name = link.inner_text().strip()
+            link.click()
+            self.random_delay(2, 4)
+            img = self.find_element_in_frames("img, .location-image")
+            text = self.find_element_in_frames(".location-text, .description")
+            self.db.locations.update_one(
+                {"vehicle_id": vehicle_id, "component": name},
+                {"$set": {
+                    "image_url": img.get_attribute("src") if img else None,
+                    "location_text": text.inner_text().strip() if text else ""
+                }},
+                upsert=True
+            )
+            self.close_content_modal()
+
+    def handle_tests(self, vehicle_id):
+        logger.info("    Extracting Tests...")
+        data = self.extract_table_data("table")
+        if data:
+            self.db.tests.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
+
+    def handle_service_manual(self, vehicle_id):
+        logger.info("    Extracting Service Manual Tree...")
+        try:
+            # 1. Wait for the Service Manual panel/drawer to appear
+            self.page.wait_for_selector("#slidePanelContent, #categorySelectorDiv", timeout=20000)
+            
+            # 2. Ensure "Table of Contents" tab is selected
+            toc_tab = self.page.locator("#serviceManualDrawerTabs li:has-text('Table of Contents')").first
+            if toc_tab.is_visible() and "selected" not in (toc_tab.get_attribute("class") or ""):
+                toc_tab.click()
+                self.random_delay(1.0, 2.0)
+
+            # 3. Recursive extraction
+            self._scrape_manual_tree(vehicle_id, path=[])
+            
+        except Exception as e:
+            logger.error(f"      Service Manual extraction failed: {e}")
+
+    def _scrape_manual_tree(self, vehicle_id, path):
+        # Find all nodes at the current level that are children of the last path element
+        # In this UI, nodes are usually within the visible tree
+        try:
+            # Get top-level nodes if path is empty, otherwise find sub-nodes
+            if not path:
+                nodes = self.page.locator("#categorySelectorDiv > ul > li").all()
+            else:
+                # Find the parent LI based on the last path name
+                parent_li = self.page.locator(f"li:has(> a:text-is('{path[-1]}'))").first
+                nodes = parent_li.locator("> ul > li").all()
+
+            for node in nodes:
+                node_text = node.locator("> a").inner_text().strip()
+                is_branch = "branch" in (node.get_attribute("class") or "")
+                is_leaf = "leaf" in (node.get_attribute("class") or "")
+                
+                new_path = path + [node_text]
+                
+                if is_branch:
+                    # Expand if closed
+                    if "closed" in (node.get_attribute("class") or ""):
+                        logger.info(f"      [Expand] {' > '.join(new_path)}")
+                        node.locator("> .treeExpandCollapseIcon").click()
+                        self.random_delay(0.5, 1.5)
+                    
+                    # Recurse
+                    self._scrape_manual_tree(vehicle_id, new_path)
+                
+                elif is_leaf:
+                    logger.info(f"      [Article] {' > '.join(new_path)}")
+                    
+                    # Check if already scraped (optional optimization)
+                    existing = self.db.manuals.find_one({"vehicle_id": vehicle_id, "path": new_path})
+                    if existing and not self.force:
+                        continue
+
+                    # Click and Extract
+                    node.locator("> a").click()
+                    self.random_delay(3, 6)
+                    
+                    viewer = self.find_element_in_frames("#contentViewerDiv, #ContentRegion .article-container")
+                    if viewer:
+                        content_html = viewer.inner_html()
+                        images = self.extract_images_from_content(viewer)
+                        tables = self.extract_tables_from_content(viewer)
+                        
+                        self.db.manuals.update_one(
+                            {"vehicle_id": vehicle_id, "path": new_path},
+                            {
+                                "$set": {
+                                    "title": node_text,
+                                    "content_html": content_html,
+                                    "images": images,
+                                    "tables": tables,
+                                    "timestamp": time.time()
+                                }
+                            },
+                            upsert=True
+                        )
+                    
+                    # Return to tree focus if needed (drawer might close or overlay)
+                    if not self.page.is_visible("#categorySelectorDiv"):
+                        self.page.click("#slidePanelHandle", force=True) # Re-open drawer
+                        self.random_delay(1, 2)
+
+        except Exception as e:
+            logger.warning(f"        Error in tree traversal: {e}")
+
+    def extract_images_from_content(self, viewer_loc):
+        images = []
+        try:
+            img_elements = viewer_loc.locator("img").all()
+            for img in img_elements:
+                src = img.get_attribute("src")
+                alt = img.get_attribute("alt") or ""
+                if src and not src.startswith("data:"):
+                    # We could upload to cloudinary here if needed, but for now just record original
+                    images.append({
+                        "original_src": src,
+                        "alt": alt
+                    })
+        except: pass
+        return images
+
+    def extract_tables_from_content(self, viewer_loc):
+        tables = []
+        try:
+            table_elements = viewer_loc.locator("table").all()
+            for table in table_elements:
+                rows = []
+                tr_elements = table.locator("tr").all()
+                for tr in tr_elements:
+                    cells = [c.inner_text().strip() for c in tr.locator("td, th").all()]
+                    if cells: rows.append(cells)
+                if rows: tables.append(rows)
+        except: pass
+        return tables
+
+    def extract_table_data(self, selector):
+        data = []
+        try:
+            table = self.find_element_in_frames(selector)
+            if not table: return []
+            rows = table.locator("tr").all()
+            if not rows: return []
+            headers = [h.inner_text().strip().upper() for h in rows[0].locator("th, td").all()]
+            for row in rows[1:]:
+                cells = [c.inner_text().strip() for c in row.locator("td").all()]
+                if len(cells) == len(headers):
+                    data.append({headers[i]: cells[i] for i in range(len(headers))})
+        except: pass
+        return data
+
+    def close_content_modal(self):
+        try:
+            # Common close buttons for Mitchell1/ProDemand modals
+            close_selectors = ["#contentViewerDiv .close-button", ".x-btn", ".modal-close", ".close-icon", "button:has-text('Close')"]
+            for sel in close_selectors:
+                btn = self.find_element_in_frames(sel)
+                if btn and btn.is_visible():
+                    btn.click()
+                    time.sleep(1)
+                    break
+        except: pass
+
+    def find_element_in_frames(self, selector):
+        # 1. Check main page
+        try:
+            el = self.page.locator(selector).first
+            if el.is_visible():
+                return el
+        except: pass
+        
+        # 2. Check all frames
+        for frame in self.page.frames:
+            try:
+                # Basic check for accessibility
+                if frame.is_detached(): continue
+                el = frame.locator(selector).first
+                if el.is_visible():
+                    return el
+            except: continue
+        return None
 
     def wait_for_ready(self):
         logger.info("Waiting for application to be ready...")
@@ -457,438 +793,6 @@ class VehicleScraper:
             logger.error(f"Failed to return to selector: {e}")
             return False
 
-    def close_content_modal(self):
-        try:
-            # Close button in the #contentViewerDiv
-            close_btn = self.page.locator("#contentViewerDiv .close-button, #contentViewerDiv .x-btn").first
-            if close_btn.is_visible():
-                close_btn.click()
-                time.sleep(1)
-        except: pass
-
-    def extract_dashboard_analytics(self, vehicle_id):
-        logger.info("  Extracting landing page analytics...")
-        summary = {}
-        
-        sections = {
-            "Commonly Replaced COMPONENTS": "components",
-            "Common DTCs": "dtcs",
-            "Common SYMPTOMS": "symptoms",
-            "Top Search LOOKUPS": "lookups"
-        }
-        
-        for section_title, db_key in sections.items():
-            try:
-                # Find the section by text (usually in an h3 or bold div)
-                section_header = self.find_element_in_frames(f"xpath=//h3[contains(., '{section_title}')] or //div[contains(., '{section_title}')]")
-                if not section_header:
-                    section_header = self.find_element_in_frames(f"text='{section_title}'")
-                
-                if section_header and section_header.is_visible():
-                    # The parent or next sibling container usually has the list
-                    container = section_header.locator("xpath=..")
-                    content = container.inner_text().strip()
-                    
-                    # Remove the title from the content to get just the list
-                    content = content.replace(section_title, "").strip()
-                    
-                    if "We are busy collecting" in content or not content:
-                        summary[db_key] = []
-                    else:
-                        # Split by newlines and clean up
-                        items = [i.strip() for i in content.split("\n") if i.strip() and len(i.strip()) > 1]
-                        summary[db_key] = items
-                        logger.info(f"    Captured {len(items)} {db_key}")
-            except Exception as e:
-                logger.warning(f"    Failed to extract {section_title}: {e}")
-        
-        if summary:
-            self.db.vehicles.update_one({"_id": vehicle_id}, {"$set": {"dashboard_summary": summary}})
-
-    def extract_table_data(self, selector):
-        """Converts an HTML table into a list of dicts."""
-        data = []
-        try:
-            # Search in frames for the table
-            table = self.find_element_in_frames(selector)
-            if not table: return []
-            
-            rows = table.locator("tr").all()
-            if not rows: return []
-            
-            # Identify headers
-            headers = [h.inner_text().strip().upper() for h in rows[0].locator("th, td").all()]
-            start_idx = 1 if any(h for h in headers) else 0
-            if start_idx == 0:
-                 headers = [f"COL_{i}" for i in range(len(headers))]
-            
-            for row in rows[start_idx:]:
-                cells = [c.inner_text().strip() for c in row.locator("td").all()]
-                if len(cells) == len(headers):
-                    row_data = {headers[i]: cells[i] for i in range(len(headers))}
-                    data.append(row_data)
-        except Exception as e:
-            logger.warning(f"    Table extraction error: {e}")
-        return data
-
-    def handle_fluids(self, vehicle_id):
-        logger.info("    Extracting Fluids...")
-        try:
-            # Search across frames for table
-            fluids = self.extract_table_data("table, .fluid-table")
-            if fluids:
-                self.db.fluids.insert_many([{"vehicle_id": vehicle_id, **f} for f in fluids])
-                logger.info(f"      Saved {len(fluids)} fluid records.")
-        except Exception as e:
-            logger.warning(f"      Fluid extraction failed: {e}")
-
-    def handle_tsbs(self, vehicle_id):
-        logger.info("    Extracting TSBs...")
-        try:
-            # Look for links in any frame
-            links_sel = ".articleListContent a, .tsb-category-link, a[href*='article']"
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(links_sel).all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            logger.info(f"      Found {len(links)} TSB links.")
-            for link_el, title in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 3)
-                    viewer = self.find_element_in_frames("#contentViewerDiv, .article-content, #articleBody")
-                    if viewer:
-                        content = viewer.inner_html()
-                        self.db.tsbs.insert_one({"vehicle_id": vehicle_id, "title": title, "content_html": content})
-                    self.close_content_modal()
-                except: pass
-        except Exception as e:
-            logger.warning(f"      TSB extraction error: {e}")
-
-    def handle_service_manual(self, vehicle_id):
-        logger.info("    Extracting Service Manual (Recursive Tree)...")
-        try:
-            # 1. Click Service Manual icon/tab if not already there
-            # The tab click is already handled in extract_all_tabs, but we ensure the tree is visible
-            # Give it more time to load the tree
-            self.random_delay(5, 7)
-            
-            tree_container = self.find_element_in_frames(".jstree-container-ul, #service-manual-tree, #categorySelectorDiv, .manual-tree, #treeDiv")
-            if not tree_container:
-                logger.warning("      Tree not found after wait. Attempting re-click...")
-                icon = self.find_element_in_frames("div:has-text('Service Manual'), .service-manual-icon, .service-manual-tab")
-                if icon:
-                    icon.click()
-                    self.random_delay(5, 8)
-                    tree_container = self.find_element_in_frames(".jstree-container-ul, #service-manual-tree, #categorySelectorDiv, .manual-tree, #treeDiv")
-
-            if tree_container:
-                self._scrape_manual_tree(vehicle_id, [], tree_container)
-            else:
-                logger.warning("      Manual tree container not found.")
-                self.page.screenshot(path="manual_tree_not_found.png")
-        except Exception as e:
-            logger.warning(f"      Manual tree error: {e}")
-
-    def _scrape_manual_tree(self, vehicle_id, path, tree_container):
-        # We need to find nodes that are visible in the current tree state
-        # jstree uses li.jstree-node
-        nodes = tree_container.locator("> li.jstree-node").all()
-        
-        for node in nodes:
-            try:
-                # Extract text from the anchor
-                anchor = node.locator("> a.jstree-anchor").first
-                text = anchor.inner_text().strip()
-                
-                # Check if it's a folder (has children or is closed/open)
-                is_folder = "jstree-closed" in (node.get_attribute("class") or "") or "jstree-open" in (node.get_attribute("class") or "")
-                
-                if is_folder:
-                    # Expand if closed
-                    if "jstree-closed" in (node.get_attribute("class") or ""):
-                        # Click the open/close icon
-                        icon = node.locator("> i.jstree-ocl").first
-                        if icon.is_visible():
-                            icon.click()
-                            self.random_delay(1.5, 2.5)
-                    
-                    # Recurse into children
-                    child_ul = node.locator("> ul.jstree-children").first
-                    if child_ul.is_visible():
-                        self._scrape_manual_tree(vehicle_id, path + [text], child_ul)
-                
-                else:
-                    # It's an article
-                    logger.info(f"      [Article] {' > '.join(path)} > {text}")
-                    anchor.click()
-                    self.random_delay(3, 5)
-                    
-                    # Wait for content to load in #ContentRegion
-                    viewer = self.find_element_in_frames("#ContentRegion, .manual-content, #articleBody")
-                    if viewer:
-                        # Extract basic info
-                        content_html = viewer.inner_html()
-                        
-                        # Extract Images
-                        images = self.extract_images_from_content(viewer)
-                        
-                        # Extract Tables
-                        tables = self.extract_tables_from_content(viewer)
-                        
-                        # Store in database
-                        manual_data = {
-                            "vehicle_id": vehicle_id,
-                            "path": path,
-                            "title": text,
-                            "content_html": content_html,
-                            "images": images,
-                            "tables": tables,
-                            "timestamp": time.time()
-                        }
-                        
-                        self.db.manuals.update_one(
-                            {"vehicle_id": vehicle_id, "path": path, "title": text},
-                            {"$set": manual_data},
-                            upsert=True
-                        )
-            except Exception as e_node:
-                logger.warning(f"        Error processing node: {e_node}")
-
-    def extract_images_from_content(self, container):
-        images = []
-        try:
-            # Find all images in the container
-            img_elements = container.locator("img").all()
-            for img in img_elements:
-                src = img.get_attribute("src")
-                if src:
-                    # Upload to Cloudinary
-                    # Note: src might be relative, but usually it's absolute in Mitchell1 apps
-                    try:
-                        upload_res = cloudinary.uploader.upload(src)
-                        images.append({
-                            "original_src": src,
-                            "cloudinary_url": upload_res.get("secure_url"),
-                            "alt": img.get_attribute("alt") or ""
-                        })
-                    except Exception as e_up:
-                        logger.warning(f"          Image upload failed: {e_up}")
-                        images.append({"original_src": src, "error": str(e_up)})
-            
-            # Check for "Fig" links that open overlays
-            fig_links = container.locator("a:has-text('Fig'), span:has-text('Fig')").all()
-            for link in fig_links:
-                try:
-                    # Some "Fig" links are just text, others are clickable
-                    if "pointer" in (link.get_attribute("style") or "") or link.get_attribute("href") or "click" in (link.get_attribute("class") or ""):
-                        link.click()
-                        self.random_delay(2, 4)
-                        # Look for overlay image
-                        overlay_img = self.find_element_in_frames(".image-viewer img, .modal img, #imgViewer img")
-                        if overlay_img:
-                            src = overlay_img.get_attribute("src")
-                            upload_res = cloudinary.uploader.upload(src)
-                            images.append({
-                                "type": "figure_overlay",
-                                "original_src": src,
-                                "cloudinary_url": upload_res.get("secure_url")
-                            })
-                        # Close overlay
-                        close_btn = self.find_element_in_frames(".image-viewer .close, .modal .close, #imgViewer .close-button")
-                        if close_btn: close_btn.click()
-                except: pass
-        except Exception as e:
-            logger.warning(f"        Image extraction error: {e}")
-        return images
-
-    def extract_tables_from_content(self, container):
-        tables_data = []
-        try:
-            table_elements = container.locator("table").all()
-            for table in table_elements:
-                rows = table.locator("tr").all()
-                if not rows: continue
-                
-                # Extract header
-                headers = [h.inner_text().strip() for h in rows[0].locator("th, td").all()]
-                
-                table_rows = []
-                for row in rows[1:]:
-                    cells = [c.inner_text().strip() for c in row.locator("td").all()]
-                    if len(cells) == len(headers):
-                        table_rows.append({headers[i]: cells[i] for i in range(len(headers))})
-                
-                if table_rows:
-                    tables_data.append(table_rows)
-        except Exception as e:
-            logger.warning(f"        Table extraction error: {e}")
-        return tables_data
-                
-    def handle_specs(self, vehicle_id):
-        logger.info("    Extracting Specs...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator("#contentViewerDiv a, .spec-topic-link, a[href*='spec']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, topic_name in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 3)
-                    data = self.extract_table_data("table")
-                    if data:
-                        self.db.specs.insert_many([{"vehicle_id": vehicle_id, "topic": topic_name, **s} for s in data])
-                except: pass
-        except Exception as e:
-            logger.warning(f"      Specs extraction failed: {e}")
-
-    def handle_adas(self, vehicle_id):
-        logger.info("    Extracting ADAS...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(".featuresList li, .adas-feature, a[href*='adas']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, feat_name in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 4)
-                    data = self.extract_table_data("table")
-                    if data:
-                        self.db.adas.insert_many([{"vehicle_id": vehicle_id, "feature": feat_name, **d} for d in data])
-                except: pass
-        except: pass
-
-    def handle_tires_lifting(self, vehicle_id):
-        logger.info("    Extracting Tire/Lifting Info...")
-        try:
-            img_el = self.find_element_in_frames("img[src*='lifting'], img[src*='tire']")
-            img_url = self.upload_image_el(img_el) if img_el else None
-            data = self.extract_table_data("table")
-            self.db.tires_lifting.insert_one({"vehicle_id": vehicle_id, "image_url": img_url, "specs": data})
-        except: pass
-
-    def handle_resets(self, vehicle_id):
-        logger.info("    Extracting Reset Procedures...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(".articleListContent a, .reset-link, a[href*='reset']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, title in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 3)
-                    viewer = self.find_element_in_frames("#contentViewerDiv, .reset-content")
-                    if viewer:
-                        self.db.resets.insert_one({"vehicle_id": vehicle_id, "procedure": title, "content_html": viewer.inner_html()})
-                    self.close_content_modal()
-                except: pass
-        except: pass
-
-    def handle_dtcs(self, vehicle_id):
-        logger.info("    Extracting DTC Index...")
-        data = self.extract_table_data("table")
-        if data:
-            self.db.dtcs.insert_many([{"vehicle_id": vehicle_id, **d} for d in data])
-
-    def handle_wiring(self, vehicle_id):
-        logger.info("    Extracting Wiring Diagrams...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(".articleListContent a, .wiring-link, a[href*='diagram']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, sys_name in links:
-                try:
-                    link_el.click()
-                    self.random_delay(3, 5)
-                    target = self.find_element_in_frames("img[src*='diagram'], svg, .wiring-diagram")
-                    if target:
-                        img_url = self.upload_image_el(target)
-                        self.db.wiring.insert_one({"vehicle_id": vehicle_id, "system": sys_name, "diagram_url": img_url})
-                    self.close_content_modal()
-                except: pass
-        except: pass
-
-    def handle_locations(self, vehicle_id):
-        logger.info("    Extracting Component Locations...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(".articleListContent a, .location-link, a[href*='location']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, loc_name in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 4)
-                    img_el = self.find_element_in_frames("img, .location-image")
-                    text_el = self.find_element_in_frames(".location-text, .description")
-                    img_url = self.upload_image_el(img_el) if img_el else None
-                    text = text_el.inner_text().strip() if text_el else ""
-                    self.db.locations.insert_one({"vehicle_id": vehicle_id, "component": loc_name, "location_text": text, "image_url": img_url})
-                    self.close_content_modal()
-                except: pass
-        except: pass
-
-    def handle_tests(self, vehicle_id):
-        logger.info("    Extracting Component Tests...")
-        try:
-            links = []
-            for frame in self.page.frames:
-                try:
-                    f_links = frame.locator(".articleListContent a, .test-link, a[href*='test']").all()
-                    for fl in f_links:
-                        links.append((fl, fl.inner_text().strip()))
-                except: continue
-                
-            for link_el, test_name in links:
-                try:
-                    link_el.click()
-                    self.random_delay(2, 4)
-                    data = self.extract_table_data("table")
-                    viewer = self.find_element_in_frames("#contentViewerDiv, .test-content")
-                    content = viewer.inner_html() if viewer else ""
-                    self.db.tests.insert_one({"vehicle_id": vehicle_id, "test": test_name, "data": data, "content_html": content})
-                    self.close_content_modal()
-                except: pass
-        except: pass
-
-    def upload_image(self, selector):
-        try:
-            img = self.page.locator(selector).first
-            if img.is_visible():
-                src = img.get_attribute("src")
-                if src and src.startswith("http"):
-                    upload_res = cloudinary.uploader.upload(src)
-                    return upload_res.get("secure_url")
-        except: pass
-        return None
 
     def run(self):
         try:
@@ -1138,14 +1042,10 @@ class VehicleScraper:
                                     )
                                     logger.info(f"          [SAVED] {year} {make} {model} {submodel}")
                                     
-                                    # --- Dashboard Deep Dive ---
                                     if self.click_use_vehicle():
-                                        # Get the ID for linking
                                         v_rec = self.db.vehicles.find_one({"year": year, "make": make, "model": model, "engine": engine, "submodel": submodel})
                                         if v_rec:
-                                            self.extract_all_tabs(v_rec["_id"])
-                                        
-                                        # Return to selector for next vehicle
+                                            self.process_quick_links(v_rec["_id"])
                                         self.return_to_selector()
                                         
                                 except Exception as e_db:

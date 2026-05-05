@@ -50,11 +50,37 @@ async def get_submodels(year: str, make: str, model: str, engine: str):
 async def get_manual(vehicle_id: str):
     from bson import ObjectId
     manuals = await db.manuals.find({"vehicle_id": ObjectId(vehicle_id)}).to_list(1000)
-    # Convert ObjectIds to strings
     for m in manuals:
         m["_id"] = str(m["_id"])
         m["vehicle_id"] = str(m["vehicle_id"])
     return manuals
+
+@app.get("/api/data/{category}/{vehicle_id}")
+async def get_category_data(category: str, vehicle_id: str):
+    from bson import ObjectId
+    # Map category names to collection names
+    collection_map = {
+        "tsbs": "tsbs",
+        "specs": "specs",
+        "adas": "adas",
+        "fluids": "fluids",
+        "tires": "tires_lifting",
+        "resets": "resets",
+        "dtcs": "dtcs",
+        "wiring": "wiring",
+        "locations": "locations",
+        "tests": "tests"
+    }
+    
+    col_name = collection_map.get(category)
+    if not col_name:
+        raise HTTPException(status_code=400, detail="Invalid category")
+    
+    data = await db[col_name].find({"vehicle_id": ObjectId(vehicle_id)}).to_list(1000)
+    for d in data:
+        d["_id"] = str(d["_id"])
+        d["vehicle_id"] = str(d["vehicle_id"])
+    return data
 
 @app.get("/vehicle/{id}")
 async def vehicle_detail(request: Request, id: str):
