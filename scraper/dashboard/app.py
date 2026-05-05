@@ -46,6 +46,16 @@ async def get_submodels(year: str, make: str, model: str, engine: str):
     # Return list of submodels with their IDs for detail viewing
     return [{"submodel": v["submodel"], "id": str(v["_id"])} for v in vehicles]
 
+@app.get("/api/manual/{vehicle_id}")
+async def get_manual(vehicle_id: str):
+    from bson import ObjectId
+    manuals = await db.manuals.find({"vehicle_id": ObjectId(vehicle_id)}).to_list(1000)
+    # Convert ObjectIds to strings
+    for m in manuals:
+        m["_id"] = str(m["_id"])
+        m["vehicle_id"] = str(m["vehicle_id"])
+    return manuals
+
 @app.get("/vehicle/{id}")
 async def vehicle_detail(request: Request, id: str):
     from bson import ObjectId

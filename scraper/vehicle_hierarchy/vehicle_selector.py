@@ -52,7 +52,7 @@ class QualifierBuffer:
             except Exception as e:
                 pass
 
-    def get(self, **kwargs):
+    def get(self, max_retries=3, **kwargs):
         # Normalize search params
         search_params = {k.lower(): str(v) for k, v in kwargs.items()}
         key_parts = []
@@ -60,7 +60,9 @@ class QualifierBuffer:
             key_parts.append(f"{k}={search_params[k]}")
         key = "&".join(key_parts)
         
-        return self.responses.get(key)
+        data = self.responses.get(key)
+        # logger.info(f"      [Buffer LookUp] {key} -> {'Found' if data else 'Not Found'}")
+        return data
 
     def clear(self):
         self.responses = {}
@@ -140,19 +142,36 @@ class VehicleScraper:
             time.sleep(2)
 
         if not self.page.is_visible("#username"):
+            # Check if we are already on a logged-in page (e.g. dashboard)
+            if self.page.is_visible("#vehicleSelectionButton") or self.page.is_visible("#ContentRegion"):
+                logger.info("Detected dashboard state — already authenticated.")
+                return
+
             # Try to find the primary login button
-            login_btn = self.page.locator("#btnLogin, #btnLoginHero, .button:has-text('Login')").first
+            login_btn = self.page.locator("#btnLogin, #btnLoginHero, .button:has-text('Login'), a:has-text('Log In')").first
             if login_btn.is_visible():
                 logger.info("Clicking Login on landing page...")
                 login_btn.click()
+                # Wait for navigation or the username field
+                try:
+                    self.page.wait_for_load_state("networkidle", timeout=15000)
+                except: pass
+                
                 # Take a screenshot right after clicking to see the transition
-                time.sleep(5)
                 self.page.screenshot(path="after_login_click.png")
             
             try:
                 # Wait for navigation or the username field
-                # Mitchell1 login is usually on a different domain, so wait_for_url might be useful
-                self.page.wait_for_selector("#username", timeout=60000)
+                # Check for dashboard indicators first in case login was automatic (remembered session)
+                try:
+                    self.page.wait_for_selector("#username, #vehicleSelectionButton, #ContentRegion", timeout=60000)
+                except Exception as e_wait:
+                    # Final check before failing
+                    if self.page.is_visible("#username"): pass
+                    elif self.page.is_visible("#vehicleSelectionButton") or self.page.is_visible("#ContentRegion"):
+                         logger.info("Session active after login click — already authenticated.")
+                         return
+                    else: raise e_wait
             except Exception as e:
                 if self.page.is_closed():
                     logger.error("Browser closed during login.")
@@ -267,16 +286,52 @@ class VehicleScraper:
     def click_use_vehicle(self):
         logger.info("Transitioning to 1SEARCH PLUS Dashboard...")
         try:
-            # Click "Use This Vehicle"
-            use_btn = self.page.locator("input[value='Use This Vehicle'], .button.blue").first
-            if use_btn.is_visible():
-                use_btn.click()
-                # Wait for dashboard to load (1SEARCH PLUS is usually the first indicator)
-                self.page.wait_for_selector("#ContentRegion, .dashboard-tabs", timeout=60000)
-                logger.info("  Dashboard loaded.")
-                return True
+            # 1. Wait for the button to be stable
+            self.random_delay(2, 4)
+            
+            # 2. Try multiple selectors for "Use This Vehicle"
+            selectors = [
+                "#useThisVehicleButton",
+                "input[value='Use This Vehicle']",
+                "button:has-text('Use This Vehicle')",
+                ".button.blue",
+                ".grey.button[value='Use This Vehicle']"
+            ]
+            
+            use_btn = None
+            for sel in selectors:
+                try:
+                    el = self.page.locator(sel).first
+                    if el.is_visible():
+                        use_btn = el
+                        logger.info(f"  Found 'Use This Vehicle' button with selector: {sel}")
+                        break
+                except: continue
+            
+            if not use_btn:
+                # Try finding in frames as a last resort
+                use_btn = self.find_element_in_frames("input[value='Use This Vehicle'], #useThisVehicleButton")
+
+            if use_btn:
+                use_btn.click(force=True)
+                logger.info("  'Use This Vehicle' clicked. Waiting for dashboard...")
+                
+                # 3. Wait for dashboard indicators
+                # #ContentRegion is the main container for the dashboard
+                # .dashboard-tabs or .tab-container are also common
+                try:
+                    self.page.wait_for_selector("#ContentRegion, .dashboard-tabs, .search-box-container", timeout=45000)
+                    logger.info("  Dashboard loaded.")
+                    return True
+                except Exception as e_wait:
+                    logger.warning(f"  Timed out waiting for dashboard indicators: {e_wait}")
+                    # Check if we are actually there but indicators changed
+                    if self.page.is_visible("#ContentRegion") or "Main/Index" in self.page.url:
+                        return True
+                    return False
             else:
                 logger.warning("  'Use This Vehicle' button not found.")
+                self.page.screenshot(path="use_vehicle_not_found.png")
                 return False
         except Exception as e:
             logger.error(f"  Failed to transition to dashboard: {e}")
@@ -324,11 +379,19 @@ class VehicleScraper:
                 logger.info(f"  [Tab] Processing {tab_name}...")
                 
                 # Search across all frames for the tab
-                target = self.find_element_in_frames(f"xpath=//div[contains(., '{tab_name}') and contains(@class, 'tab')]")
-                if not target:
-                    target = self.find_element_in_frames(f"xpath=//span[contains(text(), '{tab_name}')]/parent::div")
-                if not target:
-                    target = self.find_element_in_frames(f"text='{tab_name}'")
+                target = None
+                tab_selectors = [
+                    f"xpath=//div[contains(., '{tab_name}') and contains(@class, 'tab')]",
+                    f"xpath=//span[contains(text(), '{tab_name}')]/parent::div",
+                    f"text='{tab_name}'",
+                    f".tab:has-text('{tab_name}')",
+                    f"div:has-text('{tab_name}')"
+                ]
+                
+                for sel in tab_selectors:
+                    target = self.find_element_in_frames(sel)
+                    if target and target.is_visible():
+                        break
 
                 if target and target.is_visible():
                     # Check if it's disabled
@@ -364,25 +427,32 @@ class VehicleScraper:
         logger.info("Returning to vehicle selector...")
         try:
             # 1. Click 'Change Vehicle' in header to open dropdown
-            for sel in [".change-vehicle", "div:has-text('Change Vehicle')", "button:has-text('Change Vehicle')"]:
+            selectors_change = [".change-vehicle", "div:has-text('Change Vehicle')", "button:has-text('Change Vehicle')", "#vehicleSelectionButton"]
+            for sel in selectors_change:
                 btn = self.page.locator(sel).first
                 if btn.is_visible():
                     btn.click()
-                    self.random_delay(1.0, 2.0)
+                    self.random_delay(1.5, 2.5)
                     break
             
             # 2. Click 'Vehicle Selection' item in dropdown
-            for sel in ["h1:has-text('Vehicle Selection')", "div:has-text('Vehicle Selection')", ".vehicleSelectionButton", "text='Select Vehicle'"]:
+            selectors_select = ["h1:has-text('Vehicle Selection')", "div:has-text('Vehicle Selection')", ".vehicleSelectionButton", "text='Select Vehicle'"]
+            for sel in selectors_select:
                 btn = self.page.locator(sel).first
                 if btn.is_visible():
                     btn.click()
-                    self.page.wait_for_selector("#qualifierValueSelector", timeout=30000)
-                    return True
+                    break
             
-            # Fallback: navigate directly to selector URL
-            self.page.goto("https://www1.prodemand.com/Main/Index", wait_until="networkidle")
-            self.page.wait_for_selector("#qualifierValueSelector", timeout=30000)
-            return True
+            # 3. Wait for selector to appear
+            try:
+                self.page.wait_for_selector("#qualifierValueSelector", timeout=15000)
+                return True
+            except:
+                # Fallback: navigate directly to selector URL
+                logger.info("  Selector modal didn't appear. Navigating to Index...")
+                self.page.goto("https://www1.prodemand.com/Main/Index", wait_until="load")
+                self.page.wait_for_selector("#qualifierValueSelector", timeout=30000)
+                return True
         except Exception as e:
             logger.error(f"Failed to return to selector: {e}")
             return False
@@ -502,41 +572,162 @@ class VehicleScraper:
     def handle_service_manual(self, vehicle_id):
         logger.info("    Extracting Service Manual (Recursive Tree)...")
         try:
-            tree = self.find_element_in_frames("#categorySelectorDiv, .manual-tree-container")
-            if tree:
-                self._scrape_manual_tree(vehicle_id, [])
+            # 1. Click Service Manual icon/tab if not already there
+            # The tab click is already handled in extract_all_tabs, but we ensure the tree is visible
+            # Give it more time to load the tree
+            self.random_delay(5, 7)
+            
+            tree_container = self.find_element_in_frames(".jstree-container-ul, #service-manual-tree, #categorySelectorDiv, .manual-tree, #treeDiv")
+            if not tree_container:
+                logger.warning("      Tree not found after wait. Attempting re-click...")
+                icon = self.find_element_in_frames("div:has-text('Service Manual'), .service-manual-icon, .service-manual-tab")
+                if icon:
+                    icon.click()
+                    self.random_delay(5, 8)
+                    tree_container = self.find_element_in_frames(".jstree-container-ul, #service-manual-tree, #categorySelectorDiv, .manual-tree, #treeDiv")
+
+            if tree_container:
+                self._scrape_manual_tree(vehicle_id, [], tree_container)
             else:
                 logger.warning("      Manual tree container not found.")
+                self.page.screenshot(path="manual_tree_not_found.png")
         except Exception as e:
             logger.warning(f"      Manual tree error: {e}")
 
-    def _scrape_manual_tree(self, vehicle_id, path):
-        # Find tree in frames
-        tree_container = self.find_element_in_frames("#categorySelectorDiv")
-        if not tree_container: return
+    def _scrape_manual_tree(self, vehicle_id, path, tree_container):
+        # We need to find nodes that are visible in the current tree state
+        # jstree uses li.jstree-node
+        nodes = tree_container.locator("> li.jstree-node").all()
+        
+        for node in nodes:
+            try:
+                # Extract text from the anchor
+                anchor = node.locator("> a.jstree-anchor").first
+                text = anchor.inner_text().strip()
+                
+                # Check if it's a folder (has children or is closed/open)
+                is_folder = "jstree-closed" in (node.get_attribute("class") or "") or "jstree-open" in (node.get_attribute("class") or "")
+                
+                if is_folder:
+                    # Expand if closed
+                    if "jstree-closed" in (node.get_attribute("class") or ""):
+                        # Click the open/close icon
+                        icon = node.locator("> i.jstree-ocl").first
+                        if icon.is_visible():
+                            icon.click()
+                            self.random_delay(1.5, 2.5)
+                    
+                    # Recurse into children
+                    child_ul = node.locator("> ul.jstree-children").first
+                    if child_ul.is_visible():
+                        self._scrape_manual_tree(vehicle_id, path + [text], child_ul)
+                
+                else:
+                    # It's an article
+                    logger.info(f"      [Article] {' > '.join(path)} > {text}")
+                    anchor.click()
+                    self.random_delay(3, 5)
+                    
+                    # Wait for content to load in #ContentRegion
+                    viewer = self.find_element_in_frames("#ContentRegion, .manual-content, #articleBody")
+                    if viewer:
+                        # Extract basic info
+                        content_html = viewer.inner_html()
+                        
+                        # Extract Images
+                        images = self.extract_images_from_content(viewer)
+                        
+                        # Extract Tables
+                        tables = self.extract_tables_from_content(viewer)
+                        
+                        # Store in database
+                        manual_data = {
+                            "vehicle_id": vehicle_id,
+                            "path": path,
+                            "title": text,
+                            "content_html": content_html,
+                            "images": images,
+                            "tables": tables,
+                            "timestamp": time.time()
+                        }
+                        
+                        self.db.manuals.update_one(
+                            {"vehicle_id": vehicle_id, "path": path, "title": text},
+                            {"$set": manual_data},
+                            upsert=True
+                        )
+            except Exception as e_node:
+                logger.warning(f"        Error processing node: {e_node}")
 
-        nodes = tree_container.locator("li").all()
-        for i in range(len(nodes)):
-            node = tree_container.locator("li").nth(i)
-            text = node.inner_text().strip().split("\n")[0]
+    def extract_images_from_content(self, container):
+        images = []
+        try:
+            # Find all images in the container
+            img_elements = container.locator("img").all()
+            for img in img_elements:
+                src = img.get_attribute("src")
+                if src:
+                    # Upload to Cloudinary
+                    # Note: src might be relative, but usually it's absolute in Mitchell1 apps
+                    try:
+                        upload_res = cloudinary.uploader.upload(src)
+                        images.append({
+                            "original_src": src,
+                            "cloudinary_url": upload_res.get("secure_url"),
+                            "alt": img.get_attribute("alt") or ""
+                        })
+                    except Exception as e_up:
+                        logger.warning(f"          Image upload failed: {e_up}")
+                        images.append({"original_src": src, "error": str(e_up)})
             
-            # If it's a folder
-            if "tree-node-collapsed" in (node.get_attribute("class") or ""):
-                node.click()
-                self.random_delay(1.0, 1.5)
-                self._scrape_manual_tree(vehicle_id, path + [text])
-            
-            # If it's an article
-            elif "article" in (node.get_attribute("class") or "") or node.locator("a").count() > 0:
-                article_link = node.locator("a").first
-                article_title = article_link.inner_text().strip()
-                article_link.click()
-                self.random_delay(2, 3)
-                viewer = self.find_element_in_frames("#contentViewerDiv, .manual-content")
-                if viewer:
-                    content = viewer.inner_html()
-                    self.db.manuals.insert_one({"vehicle_id": vehicle_id, "path": path, "title": article_title, "content_html": content})
-                self.close_content_modal()
+            # Check for "Fig" links that open overlays
+            fig_links = container.locator("a:has-text('Fig'), span:has-text('Fig')").all()
+            for link in fig_links:
+                try:
+                    # Some "Fig" links are just text, others are clickable
+                    if "pointer" in (link.get_attribute("style") or "") or link.get_attribute("href") or "click" in (link.get_attribute("class") or ""):
+                        link.click()
+                        self.random_delay(2, 4)
+                        # Look for overlay image
+                        overlay_img = self.find_element_in_frames(".image-viewer img, .modal img, #imgViewer img")
+                        if overlay_img:
+                            src = overlay_img.get_attribute("src")
+                            upload_res = cloudinary.uploader.upload(src)
+                            images.append({
+                                "type": "figure_overlay",
+                                "original_src": src,
+                                "cloudinary_url": upload_res.get("secure_url")
+                            })
+                        # Close overlay
+                        close_btn = self.find_element_in_frames(".image-viewer .close, .modal .close, #imgViewer .close-button")
+                        if close_btn: close_btn.click()
+                except: pass
+        except Exception as e:
+            logger.warning(f"        Image extraction error: {e}")
+        return images
+
+    def extract_tables_from_content(self, container):
+        tables_data = []
+        try:
+            table_elements = container.locator("table").all()
+            for table in table_elements:
+                rows = table.locator("tr").all()
+                if not rows: continue
+                
+                # Extract header
+                headers = [h.inner_text().strip() for h in rows[0].locator("th, td").all()]
+                
+                table_rows = []
+                for row in rows[1:]:
+                    cells = [c.inner_text().strip() for c in row.locator("td").all()]
+                    if len(cells) == len(headers):
+                        table_rows.append({headers[i]: cells[i] for i in range(len(headers))})
+                
+                if table_rows:
+                    tables_data.append(table_rows)
+        except Exception as e:
+            logger.warning(f"        Table extraction error: {e}")
+        return tables_data
                 
     def handle_specs(self, vehicle_id):
         logger.info("    Extracting Specs...")
@@ -703,38 +894,28 @@ class VehicleScraper:
         try:
             self.login()
             
-            # Start Selector
-            if not self.page.is_visible("#qualifierValueSelector"):
-                if self.page.is_visible("#ContentRegion"):
-                    logger.info("Already on dashboard. Returning to selector...")
-                    self.page.click("#vehicleSelectionButton")
-                else:
-                    selectors = ["#vehicleSelectionButton", ".vehicleSelectionButton", "text='Select Vehicle'"]
-                    found = False
-                    for sel in selectors:
-                        try:
-                            if self.page.is_visible(sel):
-                                self.page.click(sel)
-                                found = True
-                                break
-                        except: pass
-                    
-                    if not found:
-                        try: self.page.click("#vehicleSelectionButton")
-                        except: pass
-            
             if not self.wait_for_ready():
-                raise Exception("Failed to reach a ready state after login.")
+                logger.warning("Application ready check timed out. Proceeding with caution.")
             
-            # Check if we are on the dashboard instead of the selector
-            if self.find_element_in_frames("#ContentRegion"):
-                logger.info("Landed on dashboard after login. Returning to selector...")
-                self.return_to_selector()
+            # 1. Ensure we are on the vehicle selector
+            # If ContentRegion is visible, we are likely on the dashboard
+            if self.page.is_visible("#ContentRegion") or not self.page.is_visible("#qualifierValueSelector"):
+                logger.info("Ensuring we are on the vehicle selector...")
+                if not self.page.is_visible("#qualifierValueSelector"):
+                    self.return_to_selector()
 
-            self.page.wait_for_selector("#qualifierValueSelector", timeout=30000)
+            # 2. Final wait for the selector to be ready
+            try:
+                self.page.wait_for_selector("#qualifierValueSelector", timeout=30000)
+            except Exception as e_sel:
+                logger.error(f"Vehicle selector (#qualifierValueSelector) not found: {e_sel}")
+                # Take diagnostic screenshot
+                self.page.screenshot(path="selector_not_found.png")
+                raise
             
             # Phase 1: Years
-            self.page.click("#qualifierTypeSelector li:has-text('Year')")
+            logger.info("PHASE 1: Fetching available years...")
+            self.page.click("#qualifierTypeSelector li:has-text('Year')", force=True)
             self.random_delay()
             years_data = self.buffer.get(type="year")
             if not years_data:
@@ -769,7 +950,17 @@ class VehicleScraper:
                 if not self.select_qualifier("Year", year, next_pattern="type=make"): continue
                 
                 makes_data = self.buffer.get(year=year, type="make")
-                if not makes_data: continue
+                if not makes_data:
+                    # Retry selection once
+                    logger.warning(f"  [Retry] Buffer empty for Year {year} Makes. Re-selecting...")
+                    self.select_qualifier("Year", year, next_pattern="type=make")
+                    self.random_delay(3, 5)
+                    makes_data = self.buffer.get(year=year, type="make")
+                
+                if not makes_data:
+                    logger.error(f"  [Skip] No makes found for Year {year}")
+                    continue
+                    
                 makes = [m.get('value', m.get('Value')) for m in makes_data]
                 
                 for make in makes:
@@ -777,6 +968,12 @@ class VehicleScraper:
                     if not self.select_qualifier("Make", make, next_pattern="type=model"): continue
                     
                     models_data = self.buffer.get(year=year, make=make, type="model")
+                    if not models_data:
+                        logger.warning(f"    [Retry] Buffer empty for {make} Models. Re-selecting...")
+                        self.select_qualifier("Make", make, next_pattern="type=model")
+                        self.random_delay(3, 5)
+                        models_data = self.buffer.get(year=year, make=make, type="model")
+                    
                     if not models_data: continue
                     models = [mo.get('value', mo.get('Value')) for mo in models_data]
                     
@@ -785,6 +982,12 @@ class VehicleScraper:
                         if not self.select_qualifier("Model", model, next_pattern="type=engine"): continue
                         
                         engines_data = self.buffer.get(year=year, make=make, model=model, type="engine")
+                        if not engines_data:
+                            logger.warning(f"      [Retry] Buffer empty for {model} Engines. Re-selecting...")
+                            self.select_qualifier("Model", model, next_pattern="type=engine")
+                            self.random_delay(3, 5)
+                            engines_data = self.buffer.get(year=year, make=make, model=model, type="engine")
+                        
                         if not engines_data: continue
                         engines = [e.get('value', e.get('Value')) for e in engines_data]
                         
@@ -793,6 +996,12 @@ class VehicleScraper:
                             if not self.select_qualifier("Engine", engine, next_pattern="type=submodel"): continue
                             
                             submodels_data = self.buffer.get(year=year, make=make, model=model, engine=engine, type="submodel")
+                            if not submodels_data:
+                                logger.warning(f"        [Retry] Buffer empty for {engine} Submodels. Re-selecting...")
+                                self.select_qualifier("Engine", engine, next_pattern="type=submodel")
+                                self.random_delay(3, 5)
+                                submodels_data = self.buffer.get(year=year, make=make, model=model, engine=engine, type="submodel")
+                            
                             if not submodels_data: continue
                             submodels = [s.get('value', s.get('Value')) for s in submodels_data]
                             

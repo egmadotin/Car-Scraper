@@ -52,6 +52,8 @@ graph TD
 - Cloudinary Account (for image hosting)
 
 ### 2. Environment Setup
+
+#### Windows
 ```bash
 # Clone the repository and enter the directory
 cd scraper
@@ -59,6 +61,22 @@ cd scraper
 # Create and activate virtual environment
 python -m venv venv
 .\venv\Scripts\activate
+
+# Install core dependencies
+pip install -r requirements.txt
+
+# Install Playwright browser engines
+playwright install chromium
+```
+
+#### Linux / macOS
+```bash
+# Clone the repository and enter the directory
+cd scraper
+
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
 # Install core dependencies
 pip install -r requirements.txt
