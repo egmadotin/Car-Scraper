@@ -104,30 +104,43 @@ DATABASE_NAME=prodemand_db
 ## 🚀 Usage Guide
 
 ### Option A: The Interactive Dashboard (Recommended)
-Launch the web interface to manage extractions and explore the database.
+Launch the professional vehicle management dashboard to browse, edit, and manage your data.
 ```bash
 python dashboard/app.py
 ```
 📍 **URL**: `http://localhost:8081`
 
-### Option B: Command Line Interface (Advanced)
-Use the CLI for targeted or batch operations.
+### Option B: Command Line Scraper (Advanced)
+Run the high-performance extraction engine directly from the command line.
+```bash
+# Enter the scraper engine directory
+cd scraper_engine
+
+# Run extraction for a specific year
+python main.py --year 2024
+```
 
 | Command | Description |
 | :--- | :--- |
-| `python main.py` | Run sequential scrape for all years/makes. |
-| `python main.py --year 2024` | Scrape all vehicles for a specific year. |
-| `python main.py --year 2024 --force` | Re-scrape and overwrite existing records. |
+| `python scraper_engine/main.py` | Run sequential scrape for all years/makes. |
+| `python scraper_engine/main.py --year 2024` | Scrape all vehicles for a specific year. |
+| `python scraper_engine/main.py --year 2024 --force` | Re-scrape and overwrite existing records. |
 
 ---
 
 ## 📂 Project Structure
 
-- **`dashboard/`**: FastAPI application, HTML templates, and API routes.
-- **`vehicle_hierarchy/`**: Core scraping logic and vehicle selection automation.
-- **`output/`**: Local cache of extracted JSON and media (before DB/Cloud upload).
+- **`dashboard/`**: Modular FastAPI application.
+  - **`app.py`**: Main entry point.
+  - **`routes/`**: API endpoints (Vehicles, Data, Uploads).
+  - **`templates/`**: Modern Jinja2 HTML templates.
+  - **`db.py`**: Centralized database & Cloudinary configuration.
+- **`scraper_engine/`**: The core extraction suite.
+  - **`main.py`**: Entry point for CLI-based extraction.
+  - **`vehicle_hierarchy/`**: Playwright automation logic.
+  - **`scan_mongo.py`**: Database integrity tools.
 - **`debug/`**: Automated screenshots captured during failed scraper runs.
-- **`main.py`**: Entry point for CLI-based extraction.
+- **`.env`**: Global environment configuration.
 
 ---
 
