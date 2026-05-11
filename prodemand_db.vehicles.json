@@ -1,0 +1,6612 @@
+[{
+  "_id": {
+    "$oid": "69eb7867f866a1403ac3231d"
+  },
+  "model": "Integra",
+  "engine": "1.5",
+  "make": "Acura",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777968935.220454
+},
+{
+  "_id": {
+    "$oid": "69eb8895f866a1403ac3231e"
+  },
+  "submodel": "_NA_",
+  "make": "Acura",
+  "engine": "2.0",
+  "model": "Integra",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777968946.1585822
+},
+{
+  "_id": {
+    "$oid": "69eb88aff866a1403ac3231f"
+  },
+  "submodel": "_NA_",
+  "make": "Acura",
+  "engine": "3.0",
+  "model": "MDX",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777968960.0697138
+},
+{
+  "_id": {
+    "$oid": "69eb88c6f866a1403ac32320"
+  },
+  "submodel": "_NA_",
+  "make": "Acura",
+  "engine": "3.5",
+  "model": "MDX",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777968970.5664694
+},
+{
+  "_id": {
+    "$oid": "69eb88e0f866a1403ac32321"
+  },
+  "year": "2026",
+  "model": "RDX",
+  "engine": "2.0",
+  "make": "Acura",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777968985.2417185
+},
+{
+  "_id": {
+    "$oid": "69eb8913f866a1403ac32322"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "2.0",
+  "model": "A3 Quattro",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969026.1969342
+},
+{
+  "_id": {
+    "$oid": "69eb892cf866a1403ac32323"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "3.0",
+  "model": "A6 allroad",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969054.0656645
+},
+{
+  "_id": {
+    "$oid": "69eb8946f866a1403ac32324"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "3.0",
+  "model": "A8 Quattro",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969082.8211262
+},
+{
+  "_id": {
+    "$oid": "69eb8987f866a1403ac32325"
+  },
+  "model": "Q7",
+  "engine": "2.0",
+  "make": "Audi",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969179.4345767
+},
+{
+  "_id": {
+    "$oid": "69eb899ef866a1403ac32326"
+  },
+  "model": "Q7",
+  "engine": "3.0",
+  "make": "Audi",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969189.4130065
+},
+{
+  "_id": {
+    "$oid": "69eb89b8f866a1403ac32327"
+  },
+  "year": "2026",
+  "model": "Q8",
+  "engine": "3.0",
+  "make": "Audi",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969203.1179538
+},
+{
+  "_id": {
+    "$oid": "69eb89d4f866a1403ac32328"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "2.5",
+  "model": "RS 3",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969216.3005893
+},
+{
+  "_id": {
+    "$oid": "69eb89eef866a1403ac32329"
+  },
+  "model": "RS 6 Avant",
+  "engine": "4.0",
+  "make": "Audi",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969229.946291
+},
+{
+  "_id": {
+    "$oid": "69eb8a07f866a1403ac3232a"
+  },
+  "year": "2026",
+  "model": "RS 7 Sportback",
+  "engine": "4.0",
+  "make": "Audi",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969243.2250211
+},
+{
+  "_id": {
+    "$oid": "69eb8a35f866a1403ac3232b"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "4.0",
+  "model": "RS Q8",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969278.2546208
+},
+{
+  "_id": {
+    "$oid": "69eb8a53f866a1403ac3232c"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "2.0",
+  "model": "S3",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969304.5815604
+},
+{
+  "_id": {
+    "$oid": "69eb8a6cf866a1403ac3232d"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "4.0",
+  "model": "S8",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969331.3773599
+},
+{
+  "_id": {
+    "$oid": "69eb8a86f866a1403ac3232e"
+  },
+  "year": "2026",
+  "model": "SQ7",
+  "engine": "4.0",
+  "make": "Audi",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969373.0496063
+},
+{
+  "_id": {
+    "$oid": "69eb8aa0f866a1403ac3232f"
+  },
+  "submodel": "_NA_",
+  "make": "Audi",
+  "engine": "4.0",
+  "model": "SQ8",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969386.840804
+},
+{
+  "_id": {
+    "$oid": "69eb8abff866a1403ac32330"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "230i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969404.784204
+},
+{
+  "_id": {
+    "$oid": "69eb8ad8f866a1403ac32331"
+  },
+  "year": "2026",
+  "model": "230i xDrive",
+  "engine": "2.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969418.6933033
+},
+{
+  "_id": {
+    "$oid": "69eb8af2f866a1403ac32332"
+  },
+  "model": "330i",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969432.9026184
+},
+{
+  "_id": {
+    "$oid": "69eb8b0cf866a1403ac32333"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "330i xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969446.4928088
+},
+{
+  "_id": {
+    "$oid": "69eb8b29f866a1403ac32334"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "430i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969459.8553028
+},
+{
+  "_id": {
+    "$oid": "69eb8b43f866a1403ac32335"
+  },
+  "model": "430i Gran Coupe",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969473.5825577
+},
+{
+  "_id": {
+    "$oid": "69eb8b5df866a1403ac32336"
+  },
+  "model": "430i Gran Coupe xDrive",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969488.2626739
+},
+{
+  "_id": {
+    "$oid": "69eb8b77f866a1403ac32337"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "430i xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969502.7653098
+},
+{
+  "_id": {
+    "$oid": "69eb8b91f866a1403ac32338"
+  },
+  "model": "530i",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969517.5007336
+},
+{
+  "_id": {
+    "$oid": "69eb8babf866a1403ac32339"
+  },
+  "model": "530i xDrive",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969531.825916
+},
+{
+  "_id": {
+    "$oid": "69eb8bc8f866a1403ac3233a"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "540i xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969544.819578
+},
+{
+  "_id": {
+    "$oid": "69eb8be1f866a1403ac3233b"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "550e xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969561.3557618
+},
+{
+  "_id": {
+    "$oid": "69eb8bfbf866a1403ac3233c"
+  },
+  "model": "740i",
+  "engine": "3.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969576.1162415
+},
+{
+  "_id": {
+    "$oid": "69eb8c17f866a1403ac3233d"
+  },
+  "year": "2026",
+  "model": "750e xDrive",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969604.4156961
+},
+{
+  "_id": {
+    "$oid": "69eb8c31f866a1403ac3233e"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "4.4",
+  "model": "760i xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969620.318849
+},
+{
+  "_id": {
+    "$oid": "69eb8c4bf866a1403ac3233f"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "840i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969634.2690978
+},
+{
+  "_id": {
+    "$oid": "69eb8c69f866a1403ac32340"
+  },
+  "year": "2026",
+  "model": "840i Gran Coupe xDrive",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969661.5069196
+},
+{
+  "_id": {
+    "$oid": "69eb8c85f866a1403ac32341"
+  },
+  "year": "2026",
+  "model": "Alpina XB7 xDrive",
+  "engine": "4.4",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969689.6393669
+},
+{
+  "_id": {
+    "$oid": "69eb8cdaf866a1403ac32342"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M2",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969782.9508746
+},
+{
+  "_id": {
+    "$oid": "69eb8cf5f866a1403ac32343"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "M235 Gran Coupe xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969796.5773175
+},
+{
+  "_id": {
+    "$oid": "69eb8d0ef866a1403ac32344"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M240i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969811.3412828
+},
+{
+  "_id": {
+    "$oid": "69eb8d2cf866a1403ac32345"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M3",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969837.9366405
+},
+{
+  "_id": {
+    "$oid": "69eb8d46f866a1403ac32346"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M340i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969851.3037732
+},
+{
+  "_id": {
+    "$oid": "69eb8d60f866a1403ac32347"
+  },
+  "year": "2026",
+  "model": "M340i xDrive",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969866.6418478
+},
+{
+  "_id": {
+    "$oid": "69eb8d79f866a1403ac32348"
+  },
+  "year": "2026",
+  "model": "M4",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969880.5992773
+},
+{
+  "_id": {
+    "$oid": "69eb8d93f866a1403ac32349"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M440i",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969895.1181118
+},
+{
+  "_id": {
+    "$oid": "69eb8dadf866a1403ac3234a"
+  },
+  "year": "2026",
+  "model": "M440i Gran Coupe",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969908.9304955
+},
+{
+  "_id": {
+    "$oid": "69eb8dc7f866a1403ac3234b"
+  },
+  "year": "2026",
+  "model": "M440i Gran Coupe xDrive",
+  "engine": "3.0",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969922.8770833
+},
+{
+  "_id": {
+    "$oid": "69eb8de1f866a1403ac3234c"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "M440i xDrive",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969936.587626
+},
+{
+  "_id": {
+    "$oid": "69eb8dfbf866a1403ac3234d"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "4.4",
+  "model": "M5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969949.6547096
+},
+{
+  "_id": {
+    "$oid": "69eb8e18f866a1403ac3234e"
+  },
+  "year": "2026",
+  "model": "M850i xDrive",
+  "engine": "4.4",
+  "make": "BMW",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969978.6826012
+},
+{
+  "_id": {
+    "$oid": "69eb8e33f866a1403ac3234f"
+  },
+  "model": "X1",
+  "engine": "2.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969992.5291102
+},
+{
+  "_id": {
+    "$oid": "69eb8e4cf866a1403ac32350"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "X2",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970005.7111897
+},
+{
+  "_id": {
+    "$oid": "69eb8e66f866a1403ac32351"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "X3",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970020.5725446
+},
+{
+  "_id": {
+    "$oid": "69eb8e7cf866a1403ac32352"
+  },
+  "model": "X3",
+  "engine": "3.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970031.6461716
+},
+{
+  "_id": {
+    "$oid": "69eb8e95f866a1403ac32353"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "X5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970045.8628788
+},
+{
+  "_id": {
+    "$oid": "69eb8eacf866a1403ac32354"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "4.4",
+  "model": "X5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970056.134946
+},
+{
+  "_id": {
+    "$oid": "69eb8ec7f866a1403ac32355"
+  },
+  "model": "X6",
+  "engine": "3.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970070.4164975
+},
+{
+  "_id": {
+    "$oid": "69eb8edef866a1403ac32356"
+  },
+  "model": "X6",
+  "engine": "4.4",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970080.4700472
+},
+{
+  "_id": {
+    "$oid": "69eb8ef8f866a1403ac32357"
+  },
+  "submodel": "_NA_",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "X7",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970095.1841793
+},
+{
+  "_id": {
+    "$oid": "69eb8f0ff866a1403ac32358"
+  },
+  "model": "X7",
+  "engine": "4.4",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970105.9232845
+},
+{
+  "_id": {
+    "$oid": "69eb8f29f866a1403ac32359"
+  },
+  "model": "XM",
+  "engine": "4.4",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970119.8262527
+},
+{
+  "_id": {
+    "$oid": "69eb8f37f866a1403ac3235a"
+  },
+  "submodel": "sDrive30i",
+  "make": "BMW",
+  "engine": "2.0",
+  "model": "Z4",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970133.4754615
+},
+{
+  "_id": {
+    "$oid": "69eb8f41f866a1403ac3235b"
+  },
+  "model": "Z4",
+  "engine": "3.0",
+  "make": "BMW",
+  "year": "2026",
+  "submodel": "M40i",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970142.9823532
+},
+{
+  "_id": {
+    "$oid": "69eb8f5ff866a1403ac3235c"
+  },
+  "model": "Enclave",
+  "engine": "2.5",
+  "make": "Buick",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970160.5120199
+},
+{
+  "_id": {
+    "$oid": "69eb8f78f866a1403ac3235d"
+  },
+  "submodel": "_NA_",
+  "make": "Buick",
+  "engine": "1.2",
+  "model": "Encore GX",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970173.843012
+},
+{
+  "_id": {
+    "$oid": "69eb8f8ff866a1403ac3235e"
+  },
+  "submodel": "_NA_",
+  "make": "Buick",
+  "engine": "1.3",
+  "model": "Encore GX",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970184.546622
+},
+{
+  "_id": {
+    "$oid": "69eb8fa9f866a1403ac3235f"
+  },
+  "model": "Envision",
+  "engine": "2.0",
+  "make": "Buick",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970197.984039
+},
+{
+  "_id": {
+    "$oid": "69eb8fc2f866a1403ac32360"
+  },
+  "submodel": "_NA_",
+  "make": "Buick",
+  "engine": "1.2",
+  "model": "Envista",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970212.0574906
+},
+{
+  "_id": {
+    "$oid": "69eb8fe1f866a1403ac32361"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "2.0",
+  "model": "CT4",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970231.536868
+},
+{
+  "_id": {
+    "$oid": "69eb8ff7f866a1403ac32362"
+  },
+  "model": "CT4",
+  "engine": "2.7",
+  "make": "Cadillac",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970242.3989787
+},
+{
+  "_id": {
+    "$oid": "69eb900ef866a1403ac32363"
+  },
+  "year": "2026",
+  "model": "CT4",
+  "engine": "3.6",
+  "make": "Cadillac",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970253.7638555
+},
+{
+  "_id": {
+    "$oid": "69eb9027f866a1403ac32364"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "2.0",
+  "model": "CT5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970267.6418269
+},
+{
+  "_id": {
+    "$oid": "69eb903cf866a1403ac32365"
+  },
+  "model": "CT5",
+  "engine": "3.0",
+  "make": "Cadillac",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970277.31114
+},
+{
+  "_id": {
+    "$oid": "69eb9052f866a1403ac32366"
+  },
+  "year": "2026",
+  "model": "CT5",
+  "engine": "6.2",
+  "make": "Cadillac",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970287.6047046
+},
+{
+  "_id": {
+    "$oid": "69eb906cf866a1403ac32367"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "6.2",
+  "model": "Escalade",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970301.3259254
+},
+{
+  "_id": {
+    "$oid": "69eb9086f866a1403ac32368"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "6.2",
+  "model": "Escalade ESV",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970315.058995
+},
+{
+  "_id": {
+    "$oid": "69eb9101f866a1403ac32369"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "2.0",
+  "model": "XT5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970430.1891298
+},
+{
+  "_id": {
+    "$oid": "69eb9118f866a1403ac3236a"
+  },
+  "submodel": "_NA_",
+  "make": "Cadillac",
+  "engine": "3.6",
+  "model": "XT5",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970440.5690188
+},
+{
+  "_id": {
+    "$oid": "69eb9135f866a1403ac3236b"
+  },
+  "model": "Blazer",
+  "engine": "2.0",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970458.8465536
+},
+{
+  "_id": {
+    "$oid": "69eb914df866a1403ac3236c"
+  },
+  "model": "Blazer",
+  "engine": "3.6",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970469.2730622
+},
+{
+  "_id": {
+    "$oid": "69eb9179f866a1403ac3236d"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "2.7",
+  "model": "Colorado",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970502.2577376
+},
+{
+  "_id": {
+    "$oid": "69eb9193f866a1403ac3236e"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "5.5",
+  "model": "Corvette",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970515.9493096
+},
+{
+  "_id": {
+    "$oid": "69eb91a9f866a1403ac3236f"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "6.2",
+  "model": "Corvette",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970526.2974389
+},
+{
+  "_id": {
+    "$oid": "69eb91ebf866a1403ac32370"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "2.7",
+  "model": "Silverado 1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970629.4971466
+},
+{
+  "_id": {
+    "$oid": "69eb9201f866a1403ac32371"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "3.0",
+  "model": "Silverado 1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970639.061646
+},
+{
+  "_id": {
+    "$oid": "69eb9217f866a1403ac32372"
+  },
+  "model": "Silverado 1500",
+  "engine": "5.3",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970648.7640212
+},
+{
+  "_id": {
+    "$oid": "69eb922df866a1403ac32373"
+  },
+  "model": "Silverado 1500",
+  "engine": "6.2",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970659.3269954
+},
+{
+  "_id": {
+    "$oid": "69eb9249f866a1403ac32374"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "6.6",
+  "model": "Silverado 2500 HD",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970674.4260688
+},
+{
+  "_id": {
+    "$oid": "69eb9262f866a1403ac32375"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "6.6",
+  "model": "Silverado 3500 HD",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970688.596112
+},
+{
+  "_id": {
+    "$oid": "69eb928ff866a1403ac32376"
+  },
+  "model": "Suburban",
+  "engine": "3.0",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970727.1872268
+},
+{
+  "_id": {
+    "$oid": "69eb92a6f866a1403ac32377"
+  },
+  "year": "2026",
+  "model": "Suburban",
+  "engine": "5.3",
+  "make": "Chevrolet",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970738.459854
+},
+{
+  "_id": {
+    "$oid": "69eb92bcf866a1403ac32378"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "6.2",
+  "model": "Suburban",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970748.3237097
+},
+{
+  "_id": {
+    "$oid": "69eb92d7f866a1403ac32379"
+  },
+  "model": "Tahoe",
+  "engine": "3.0",
+  "make": "Chevrolet",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970761.7558417
+},
+{
+  "_id": {
+    "$oid": "69eb92edf866a1403ac3237a"
+  },
+  "year": "2026",
+  "model": "Tahoe",
+  "engine": "5.3",
+  "make": "Chevrolet",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970771.8077602
+},
+{
+  "_id": {
+    "$oid": "69eb9304f866a1403ac3237b"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "6.2",
+  "model": "Tahoe",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970781.6464968
+},
+{
+  "_id": {
+    "$oid": "69eb931cf866a1403ac3237c"
+  },
+  "submodel": "_NA_",
+  "make": "Chevrolet",
+  "engine": "1.3",
+  "model": "Trailblazer",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970806.872386
+},
+{
+  "_id": {
+    "$oid": "69eb9336f866a1403ac3237d"
+  },
+  "year": "2026",
+  "model": "Traverse",
+  "engine": "2.5",
+  "make": "Chevrolet",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970821.0976393
+},
+{
+  "_id": {
+    "$oid": "69eb934ff866a1403ac3237e"
+  },
+  "year": "2026",
+  "model": "Trax",
+  "engine": "1.2",
+  "make": "Chevrolet",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970834.8682566
+},
+{
+  "_id": {
+    "$oid": "69eb93b5f866a1403ac3237f"
+  },
+  "submodel": "_NA_",
+  "make": "Dodge",
+  "engine": "3.0",
+  "model": "Charger",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970929.1063323
+},
+{
+  "_id": {
+    "$oid": "69eb93d3f866a1403ac32380"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "7.3",
+  "model": "E-350 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057773.486683
+},
+{
+  "_id": {
+    "$oid": "69eb93ecf866a1403ac32381"
+  },
+  "year": "2026",
+  "model": "E-450 Super Duty",
+  "engine": "7.3",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057799.9430554
+},
+{
+  "_id": {
+    "$oid": "69eb9406f866a1403ac32382"
+  },
+  "model": "Escape",
+  "engine": "1.5",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057826.012592
+},
+{
+  "_id": {
+    "$oid": "69eb941cf866a1403ac32383"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "2.0",
+  "model": "Escape",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057849.4433513
+},
+{
+  "_id": {
+    "$oid": "69eb9432f866a1403ac32384"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "2.5",
+  "model": "Escape",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057871.750136
+},
+{
+  "_id": {
+    "$oid": "69eb9461f866a1403ac32385"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "3.5",
+  "model": "Expedition",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057915.982679
+},
+{
+  "_id": {
+    "$oid": "69eb947af866a1403ac32386"
+  },
+  "model": "Explorer",
+  "engine": "2.3",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057941.3670764
+},
+{
+  "_id": {
+    "$oid": "69eb9490f866a1403ac32387"
+  },
+  "year": "2026",
+  "model": "Explorer",
+  "engine": "3.0",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057963.4245133
+},
+{
+  "_id": {
+    "$oid": "69eb94aaf866a1403ac32388"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "2.7",
+  "model": "F-150",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777057989.2790768
+},
+{
+  "_id": {
+    "$oid": "69eb94c1f866a1403ac32389"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "3.5",
+  "model": "F-150",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058011.53615
+},
+{
+  "_id": {
+    "$oid": "69eb94d8f866a1403ac3238a"
+  },
+  "year": "2026",
+  "model": "F-150",
+  "engine": "5.0",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058034.1631181
+},
+{
+  "_id": {
+    "$oid": "69eb94eef866a1403ac3238b"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "5.2",
+  "model": "F-150",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058057.3084445
+},
+{
+  "_id": {
+    "$oid": "69eb9507f866a1403ac3238c"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "6.7",
+  "model": "F-250 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058084.208344
+},
+{
+  "_id": {
+    "$oid": "69eb951df866a1403ac3238d"
+  },
+  "year": "2026",
+  "model": "F-250 Super Duty",
+  "engine": "6.8",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058106.6370184
+},
+{
+  "_id": {
+    "$oid": "69eb9533f866a1403ac3238e"
+  },
+  "year": "2026",
+  "model": "F-250 Super Duty",
+  "engine": "7.3",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058129.1049974
+},
+{
+  "_id": {
+    "$oid": "69eb954df866a1403ac3238f"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "6.7",
+  "model": "F-350 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058154.776775
+},
+{
+  "_id": {
+    "$oid": "69eb9563f866a1403ac32390"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "6.8",
+  "model": "F-350 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058178.3833437
+},
+{
+  "_id": {
+    "$oid": "69eb957af866a1403ac32391"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "7.3",
+  "model": "F-350 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058200.920838
+},
+{
+  "_id": {
+    "$oid": "69eb9595f866a1403ac32392"
+  },
+  "model": "F-450 Super Duty",
+  "engine": "6.7",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058227.541188
+},
+{
+  "_id": {
+    "$oid": "69eb95aff866a1403ac32393"
+  },
+  "model": "F-550 Super Duty",
+  "engine": "6.7",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058253.2410636
+},
+{
+  "_id": {
+    "$oid": "69eb95c5f866a1403ac32394"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "7.3",
+  "model": "F-550 Super Duty",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058275.6812668
+},
+{
+  "_id": {
+    "$oid": "69eb95e0f866a1403ac32395"
+  },
+  "model": "Maverick",
+  "engine": "2.0",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058303.0671399
+},
+{
+  "_id": {
+    "$oid": "69eb95f6f866a1403ac32396"
+  },
+  "model": "Maverick",
+  "engine": "2.5",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058325.8601441
+},
+{
+  "_id": {
+    "$oid": "69eb9615f866a1403ac32397"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "2.3",
+  "model": "Mustang",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058351.401238
+},
+{
+  "_id": {
+    "$oid": "69eb962bf866a1403ac32398"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "5.0",
+  "model": "Mustang",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058374.8158877
+},
+{
+  "_id": {
+    "$oid": "69eb9645f866a1403ac32399"
+  },
+  "model": "Transit-150",
+  "engine": "3.5",
+  "make": "Ford",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058400.9160879
+},
+{
+  "_id": {
+    "$oid": "69eb965ef866a1403ac3239a"
+  },
+  "year": "2026",
+  "model": "Transit-250",
+  "engine": "3.5",
+  "make": "Ford",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058428.2390606
+},
+{
+  "_id": {
+    "$oid": "69eb9679f866a1403ac3239b"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "3.5",
+  "model": "Transit-350",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058453.3256693
+},
+{
+  "_id": {
+    "$oid": "69eb9693f866a1403ac3239c"
+  },
+  "submodel": "_NA_",
+  "make": "Ford",
+  "engine": "3.5",
+  "model": "Transit-350 HD",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058478.9500413
+},
+{
+  "_id": {
+    "$oid": "69eb96c4f866a1403ac3239d"
+  },
+  "submodel": "_NA_",
+  "make": "Genesis",
+  "engine": "2.5",
+  "model": "G70",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058527.98915
+},
+{
+  "_id": {
+    "$oid": "69eb96daf866a1403ac3239e"
+  },
+  "submodel": "_NA_",
+  "make": "Genesis",
+  "engine": "3.3",
+  "model": "G70",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058555.8828561
+},
+{
+  "_id": {
+    "$oid": "69eb96f5f866a1403ac3239f"
+  },
+  "model": "G80",
+  "engine": "2.5",
+  "make": "Genesis",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058581.1517582
+},
+{
+  "_id": {
+    "$oid": "69eb970cf866a1403ac323a0"
+  },
+  "submodel": "_NA_",
+  "make": "Genesis",
+  "engine": "3.5",
+  "model": "G80",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058603.523721
+},
+{
+  "_id": {
+    "$oid": "69eb9725f866a1403ac323a1"
+  },
+  "submodel": "_NA_",
+  "make": "Genesis",
+  "engine": "3.5",
+  "model": "G90",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058629.4382603
+},
+{
+  "_id": {
+    "$oid": "69eb9758f866a1403ac323a2"
+  },
+  "model": "GV80",
+  "engine": "2.5",
+  "make": "Genesis",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058678.1487477
+},
+{
+  "_id": {
+    "$oid": "69eb976ef866a1403ac323a3"
+  },
+  "model": "GV80",
+  "engine": "3.5",
+  "make": "Genesis",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058700.6952107
+},
+{
+  "_id": {
+    "$oid": "69eb978ff866a1403ac323a4"
+  },
+  "year": "2026",
+  "model": "Acadia",
+  "engine": "2.5",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058735.8202927
+},
+{
+  "_id": {
+    "$oid": "69eb97aaf866a1403ac323a5"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "2.7",
+  "model": "Canyon",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058760.7348173
+},
+{
+  "_id": {
+    "$oid": "69eb97d8f866a1403ac323a6"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "2.7",
+  "model": "Sierra 1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058806.697648
+},
+{
+  "_id": {
+    "$oid": "69eb97eef866a1403ac323a7"
+  },
+  "year": "2026",
+  "model": "Sierra 1500",
+  "engine": "3.0",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058830.2935398
+},
+{
+  "_id": {
+    "$oid": "69eb9804f866a1403ac323a8"
+  },
+  "year": "2026",
+  "model": "Sierra 1500",
+  "engine": "5.3",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058852.4426968
+},
+{
+  "_id": {
+    "$oid": "69eb981af866a1403ac323a9"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "6.2",
+  "model": "Sierra 1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058876.0141962
+},
+{
+  "_id": {
+    "$oid": "69eb9835f866a1403ac323aa"
+  },
+  "year": "2026",
+  "model": "Sierra 2500 HD",
+  "engine": "6.6",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058902.8180795
+},
+{
+  "_id": {
+    "$oid": "69eb984ff866a1403ac323ab"
+  },
+  "year": "2026",
+  "model": "Sierra 3500 HD",
+  "engine": "6.6",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058928.7200315
+},
+{
+  "_id": {
+    "$oid": "69eb9884f866a1403ac323ac"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "1.5",
+  "model": "Terrain",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058974.4648588
+},
+{
+  "_id": {
+    "$oid": "69eb989df866a1403ac323ad"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "3.0",
+  "model": "Yukon",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777058999.8499374
+},
+{
+  "_id": {
+    "$oid": "69eb98b4f866a1403ac323ae"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "5.3",
+  "model": "Yukon",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059022.0634923
+},
+{
+  "_id": {
+    "$oid": "69eb98caf866a1403ac323af"
+  },
+  "model": "Yukon",
+  "engine": "6.2",
+  "make": "GMC",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059044.190084
+},
+{
+  "_id": {
+    "$oid": "69eb98e4f866a1403ac323b0"
+  },
+  "model": "Yukon XL",
+  "engine": "3.0",
+  "make": "GMC",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059070.8960075
+},
+{
+  "_id": {
+    "$oid": "69eb98fbf866a1403ac323b1"
+  },
+  "year": "2026",
+  "model": "Yukon XL",
+  "engine": "5.3",
+  "make": "GMC",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059093.7381916
+},
+{
+  "_id": {
+    "$oid": "69eb9911f866a1403ac323b2"
+  },
+  "submodel": "_NA_",
+  "make": "GMC",
+  "engine": "6.2",
+  "model": "Yukon XL",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059116.5019522
+},
+{
+  "_id": {
+    "$oid": "69eb992ef866a1403ac323b3"
+  },
+  "model": "Civic",
+  "engine": "1.5",
+  "make": "Honda",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059145.8802848
+},
+{
+  "_id": {
+    "$oid": "69eb9945f866a1403ac323b4"
+  },
+  "year": "2026",
+  "model": "Civic",
+  "engine": "2.0",
+  "make": "Honda",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059168.486167
+},
+{
+  "_id": {
+    "$oid": "69eb9960f866a1403ac323b5"
+  },
+  "submodel": "_NA_",
+  "make": "Honda",
+  "engine": "1.5",
+  "model": "CR-V",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059195.606734
+},
+{
+  "_id": {
+    "$oid": "69eb9977f866a1403ac323b6"
+  },
+  "submodel": "_NA_",
+  "make": "Honda",
+  "engine": "2.0",
+  "model": "CR-V",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059218.3567333
+},
+{
+  "_id": {
+    "$oid": "69eb9990f866a1403ac323b7"
+  },
+  "year": "2026",
+  "model": "HR-V",
+  "engine": "2.0",
+  "make": "Honda",
+  "submodel": "_NA_",
+  "options": {},
+  "timestamp": 1777047952.4910626
+},
+{
+  "_id": {
+    "$oid": "69eb99aaf866a1403ac323b8"
+  },
+  "year": "2026",
+  "model": "Odyssey",
+  "engine": "3.5",
+  "make": "Honda",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059283.7772214
+},
+{
+  "_id": {
+    "$oid": "69eb99c9f866a1403ac323b9"
+  },
+  "submodel": "_NA_",
+  "make": "Honda",
+  "engine": "3.5",
+  "model": "Passport",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059310.1188388
+},
+{
+  "_id": {
+    "$oid": "69eb99e4f866a1403ac323ba"
+  },
+  "submodel": "_NA_",
+  "make": "Honda",
+  "engine": "2.0",
+  "model": "Prelude",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059335.828219
+},
+{
+  "_id": {
+    "$oid": "69eb9a10f866a1403ac323bb"
+  },
+  "submodel": "_NA_",
+  "make": "Honda",
+  "engine": "3.5",
+  "model": "Ridgeline",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059381.6135445
+},
+{
+  "_id": {
+    "$oid": "69eb9a2ef866a1403ac323bc"
+  },
+  "submodel": "_NA_",
+  "make": "Hyundai",
+  "engine": "1.6",
+  "model": "Elantra",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059411.5816553
+},
+{
+  "_id": {
+    "$oid": "69eb9a45f866a1403ac323bd"
+  },
+  "model": "Elantra",
+  "engine": "2.0",
+  "make": "Hyundai",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059434.0418997
+},
+{
+  "_id": {
+    "$oid": "69eb9a9af866a1403ac323be"
+  },
+  "year": "2026",
+  "model": "Kona",
+  "engine": "1.6",
+  "make": "Hyundai",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059520.5298285
+},
+{
+  "_id": {
+    "$oid": "69eb9ab0f866a1403ac323bf"
+  },
+  "year": "2026",
+  "model": "Kona",
+  "engine": "2.0",
+  "make": "Hyundai",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059543.0270467
+},
+{
+  "_id": {
+    "$oid": "69eb9acbf866a1403ac323c0"
+  },
+  "submodel": "_NA_",
+  "make": "Hyundai",
+  "engine": "2.5",
+  "model": "Palisade",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059568.8450408
+},
+{
+  "_id": {
+    "$oid": "69eb9ae3f866a1403ac323c1"
+  },
+  "submodel": "_NA_",
+  "make": "Hyundai",
+  "engine": "3.5",
+  "model": "Palisade",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059592.0108137
+},
+{
+  "_id": {
+    "$oid": "69eb9afef866a1403ac323c2"
+  },
+  "year": "2026",
+  "model": "Santa Cruz",
+  "engine": "2.5",
+  "make": "Hyundai",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059618.0918133
+},
+{
+  "_id": {
+    "$oid": "69eb9b19f866a1403ac323c3"
+  },
+  "model": "Santa Fe",
+  "engine": "1.6",
+  "make": "Hyundai",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059643.702603
+},
+{
+  "_id": {
+    "$oid": "69ebc752f866a1403ac323c4"
+  },
+  "year": "2026",
+  "model": "Santa Fe",
+  "engine": "2.5",
+  "make": "Hyundai",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059666.1986988
+},
+{
+  "_id": {
+    "$oid": "69ebc76cf866a1403ac323c5"
+  },
+  "model": "Sonata",
+  "engine": "2.5",
+  "make": "Hyundai",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059692.5920038
+},
+{
+  "_id": {
+    "$oid": "69ebc78bf866a1403ac323c6"
+  },
+  "submodel": "_NA_",
+  "make": "Hyundai",
+  "engine": "1.6",
+  "model": "Tucson",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059723.651211
+},
+{
+  "_id": {
+    "$oid": "69ebc7a3f866a1403ac323c7"
+  },
+  "submodel": "_NA_",
+  "make": "Hyundai",
+  "engine": "2.5",
+  "model": "Tucson",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059747.4650407
+},
+{
+  "_id": {
+    "$oid": "69ebc7d4f866a1403ac323c8"
+  },
+  "year": "2026",
+  "model": "QX60",
+  "engine": "2.0",
+  "make": "Infiniti",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059796.7876306
+},
+{
+  "_id": {
+    "$oid": "69ebc7eef866a1403ac323c9"
+  },
+  "year": "2026",
+  "model": "QX80",
+  "engine": "3.5",
+  "make": "Infiniti",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059822.515118
+},
+{
+  "_id": {
+    "$oid": "69ebc840f866a1403ac323ca"
+  },
+  "submodel": "_NA_",
+  "make": "Jeep",
+  "engine": "1.6",
+  "model": "Cherokee",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059904.1883187
+},
+{
+  "_id": {
+    "$oid": "69ebc85af866a1403ac323cb"
+  },
+  "submodel": "_NA_",
+  "make": "Jeep",
+  "engine": "2.0",
+  "model": "Compass",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059930.8455937
+},
+{
+  "_id": {
+    "$oid": "69ebc877f866a1403ac323cc"
+  },
+  "model": "Carnival",
+  "engine": "1.6",
+  "make": "Kia",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059959.7074904
+},
+{
+  "_id": {
+    "$oid": "69ebc88ef866a1403ac323cd"
+  },
+  "year": "2026",
+  "model": "Carnival",
+  "engine": "3.5",
+  "make": "Kia",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777059982.5019953
+},
+{
+  "_id": {
+    "$oid": "69ebc8bbf866a1403ac323ce"
+  },
+  "submodel": "_NA_",
+  "make": "Kia",
+  "engine": "1.6",
+  "model": "K4",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060027.0314138
+},
+{
+  "_id": {
+    "$oid": "69ebc8d0f866a1403ac323cf"
+  },
+  "submodel": "_NA_",
+  "make": "Kia",
+  "engine": "2.0",
+  "model": "K4",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060048.861176
+},
+{
+  "_id": {
+    "$oid": "69ebc8ebf866a1403ac323d0"
+  },
+  "model": "K5",
+  "engine": "2.5",
+  "make": "Kia",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060075.2041137
+},
+{
+  "_id": {
+    "$oid": "69ebc905f866a1403ac323d1"
+  },
+  "model": "Niro",
+  "engine": "1.6",
+  "make": "Kia",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060101.0817297
+},
+{
+  "_id": {
+    "$oid": "69ebc91ef866a1403ac323d2"
+  },
+  "submodel": "_NA_",
+  "make": "Kia",
+  "engine": "1.6",
+  "model": "Seltos",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060126.5002701
+},
+{
+  "_id": {
+    "$oid": "69ebc935f866a1403ac323d3"
+  },
+  "year": "2026",
+  "model": "Seltos",
+  "engine": "2.0",
+  "make": "Kia",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060149.032314
+},
+{
+  "_id": {
+    "$oid": "69ebc94ff866a1403ac323d4"
+  },
+  "year": "2026",
+  "model": "Sorento",
+  "engine": "1.6",
+  "make": "Kia",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060175.5542943
+},
+{
+  "_id": {
+    "$oid": "69ebc965f866a1403ac323d5"
+  },
+  "submodel": "_NA_",
+  "make": "Kia",
+  "engine": "2.5",
+  "model": "Sorento",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060197.3884075
+},
+{
+  "_id": {
+    "$oid": "69ebc97ff866a1403ac323d6"
+  },
+  "submodel": "_NA_",
+  "make": "Kia",
+  "engine": "1.6",
+  "model": "Sportage",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060223.3379338
+},
+{
+  "_id": {
+    "$oid": "69ebc995f866a1403ac323d7"
+  },
+  "model": "Sportage",
+  "engine": "2.5",
+  "make": "Kia",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060245.9437542
+},
+{
+  "_id": {
+    "$oid": "69ebc9b4f866a1403ac323d8"
+  },
+  "submodel": "_NA_",
+  "make": "Land Rover",
+  "engine": "2.0",
+  "model": "Defender",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060276.672516
+},
+{
+  "_id": {
+    "$oid": "69ebc9caf866a1403ac323d9"
+  },
+  "submodel": "_NA_",
+  "make": "Land Rover",
+  "engine": "3.0",
+  "model": "Defender",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060298.6845968
+},
+{
+  "_id": {
+    "$oid": "69ebc9e1f866a1403ac323da"
+  },
+  "year": "2026",
+  "model": "Defender",
+  "engine": "4.4",
+  "make": "Land Rover",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060321.447057
+},
+{
+  "_id": {
+    "$oid": "69ebc9f7f866a1403ac323db"
+  },
+  "model": "Defender",
+  "engine": "5.0",
+  "make": "Land Rover",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060343.630603
+},
+{
+  "_id": {
+    "$oid": "69ebca13f866a1403ac323dc"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "3.4",
+  "model": "GX 550",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060371.7584875
+},
+{
+  "_id": {
+    "$oid": "69ebca2df866a1403ac323dd"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "3.5",
+  "model": "IS 350",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060397.425864
+},
+{
+  "_id": {
+    "$oid": "69ebca47f866a1403ac323de"
+  },
+  "year": "2026",
+  "model": "LC 500",
+  "engine": "5.0",
+  "make": "Lexus",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060423.6326706
+},
+{
+  "_id": {
+    "$oid": "69ebca61f866a1403ac323df"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "3.4",
+  "model": "LS 500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060449.3099637
+},
+{
+  "_id": {
+    "$oid": "69ebca7af866a1403ac323e0"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "3.4",
+  "model": "LX 600",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060474.7599964
+},
+{
+  "_id": {
+    "$oid": "69ebca95f866a1403ac323e1"
+  },
+  "model": "LX 700h",
+  "engine": "3.4",
+  "make": "Lexus",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060501.1404865
+},
+{
+  "_id": {
+    "$oid": "69ebcab0f866a1403ac323e2"
+  },
+  "model": "NX 350",
+  "engine": "2.4",
+  "make": "Lexus",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060528.3267558
+},
+{
+  "_id": {
+    "$oid": "69ebcacaf866a1403ac323e3"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "2.5",
+  "model": "NX 350h",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060554.2936094
+},
+{
+  "_id": {
+    "$oid": "69ebcae4f866a1403ac323e4"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "2.5",
+  "model": "NX 450h+",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060580.2885487
+},
+{
+  "_id": {
+    "$oid": "69ebcb03f866a1403ac323e5"
+  },
+  "year": "2026",
+  "model": "RX 350",
+  "engine": "2.4",
+  "make": "Lexus",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060611.0722115
+},
+{
+  "_id": {
+    "$oid": "69ebcb1bf866a1403ac323e6"
+  },
+  "model": "RX 350h",
+  "engine": "2.5",
+  "make": "Lexus",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060635.6255367
+},
+{
+  "_id": {
+    "$oid": "69ebcb35f866a1403ac323e7"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "2.5",
+  "model": "RX 450h+",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060661.4539948
+},
+{
+  "_id": {
+    "$oid": "69ebcb4ff866a1403ac323e8"
+  },
+  "model": "RX 500h",
+  "engine": "2.4",
+  "make": "Lexus",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060687.8355591
+},
+{
+  "_id": {
+    "$oid": "69ebcba4f866a1403ac323e9"
+  },
+  "year": "2026",
+  "model": "TX 350",
+  "engine": "2.4",
+  "make": "Lexus",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060772.0107229
+},
+{
+  "_id": {
+    "$oid": "69ebcbbdf866a1403ac323ea"
+  },
+  "year": "2026",
+  "model": "TX 500h",
+  "engine": "2.4",
+  "make": "Lexus",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060797.0807202
+},
+{
+  "_id": {
+    "$oid": "69ebcbd6f866a1403ac323eb"
+  },
+  "model": "TX 550h+",
+  "engine": "3.5",
+  "make": "Lexus",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060822.9384723
+},
+{
+  "_id": {
+    "$oid": "69ebcbf3f866a1403ac323ec"
+  },
+  "submodel": "_NA_",
+  "make": "Lexus",
+  "engine": "2.0",
+  "model": "UX 300h",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060851.567026
+},
+{
+  "_id": {
+    "$oid": "69ebcc0ff866a1403ac323ed"
+  },
+  "submodel": "_NA_",
+  "make": "Lincoln",
+  "engine": "3.0",
+  "model": "Aviator",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060879.3288338
+},
+{
+  "_id": {
+    "$oid": "69ebcc29f866a1403ac323ee"
+  },
+  "year": "2026",
+  "model": "Corsair",
+  "engine": "2.0",
+  "make": "Lincoln",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060905.4224832
+},
+{
+  "_id": {
+    "$oid": "69ebcc40f866a1403ac323ef"
+  },
+  "submodel": "_NA_",
+  "make": "Lincoln",
+  "engine": "2.5",
+  "model": "Corsair",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060928.1649978
+},
+{
+  "_id": {
+    "$oid": "69ebcc59f866a1403ac323f0"
+  },
+  "submodel": "_NA_",
+  "make": "Lincoln",
+  "engine": "2.0",
+  "model": "Nautilus",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060953.6737804
+},
+{
+  "_id": {
+    "$oid": "69ebcc73f866a1403ac323f1"
+  },
+  "model": "Navigator",
+  "engine": "3.5",
+  "make": "Lincoln",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777060979.86358
+},
+{
+  "_id": {
+    "$oid": "69ebcc90f866a1403ac323f2"
+  },
+  "model": "3",
+  "engine": "2.5",
+  "make": "Mazda",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061008.1636105
+},
+{
+  "_id": {
+    "$oid": "69ebcca9f866a1403ac323f3"
+  },
+  "submodel": "_NA_",
+  "make": "Mazda",
+  "engine": "2.5",
+  "model": "CX-30",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061033.169575
+},
+{
+  "_id": {
+    "$oid": "69ebccc3f866a1403ac323f4"
+  },
+  "submodel": "_NA_",
+  "make": "Mazda",
+  "engine": "2.5",
+  "model": "CX-50",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061059.013696
+},
+{
+  "_id": {
+    "$oid": "69ebccddf866a1403ac323f5"
+  },
+  "year": "2026",
+  "model": "CX-70",
+  "engine": "3.3",
+  "make": "Mazda",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061085.2525222
+},
+{
+  "_id": {
+    "$oid": "69ebccf7f866a1403ac323f6"
+  },
+  "submodel": "_NA_",
+  "make": "Mazda",
+  "engine": "3.3",
+  "model": "CX-90",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061111.8468344
+},
+{
+  "_id": {
+    "$oid": "69ebcd14f866a1403ac323f7"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "C300",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061140.6025305
+},
+{
+  "_id": {
+    "$oid": "69ebcd2ef866a1403ac323f8"
+  },
+  "model": "C43 AMG",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061166.1830494
+},
+{
+  "_id": {
+    "$oid": "69ebcd48f866a1403ac323f9"
+  },
+  "year": "2026",
+  "model": "C63 S AMG E Performance",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061192.7844791
+},
+{
+  "_id": {
+    "$oid": "69ebcd62f866a1403ac323fa"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "CLA250",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061218.216594
+},
+{
+  "_id": {
+    "$oid": "69ebcd7cf866a1403ac323fb"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "CLA35 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061244.8097897
+},
+{
+  "_id": {
+    "$oid": "69ebcd97f866a1403ac323fc"
+  },
+  "model": "CLA45 S AMG",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061271.1040592
+},
+{
+  "_id": {
+    "$oid": "69ebcdb1f866a1403ac323fd"
+  },
+  "model": "CLE300",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061297.712532
+},
+{
+  "_id": {
+    "$oid": "69ebcdcbf866a1403ac323fe"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "3.0",
+  "model": "CLE450",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061323.198429
+},
+{
+  "_id": {
+    "$oid": "69ebcde6f866a1403ac323ff"
+  },
+  "year": "2026",
+  "model": "CLE53 AMG",
+  "engine": "3.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061350.077682
+},
+{
+  "_id": {
+    "$oid": "69ebcdfff866a1403ac32400"
+  },
+  "year": "2026",
+  "model": "E350",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061375.5541863
+},
+{
+  "_id": {
+    "$oid": "69ebce20f866a1403ac32401"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "3.0",
+  "model": "G550",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061408.4206731
+},
+{
+  "_id": {
+    "$oid": "69ebce4ef866a1403ac32402"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "4.0",
+  "model": "G63 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061454.7594001
+},
+{
+  "_id": {
+    "$oid": "69ebce68f866a1403ac32403"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "GLA250",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061480.1902425
+},
+{
+  "_id": {
+    "$oid": "69ebce82f866a1403ac32404"
+  },
+  "year": "2026",
+  "model": "GLA35 AMG",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061506.6752958
+},
+{
+  "_id": {
+    "$oid": "69ebce9ff866a1403ac32405"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "GLB250",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061535.0252626
+},
+{
+  "_id": {
+    "$oid": "69ebceb9f866a1403ac32406"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "GLB35 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061561.5932715
+},
+{
+  "_id": {
+    "$oid": "69ebced3f866a1403ac32407"
+  },
+  "model": "GLS450",
+  "engine": "3.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061587.962666
+},
+{
+  "_id": {
+    "$oid": "69ebceeef866a1403ac32408"
+  },
+  "model": "GLS580",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061614.667426
+},
+{
+  "_id": {
+    "$oid": "69ebcf08f866a1403ac32409"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "4.0",
+  "model": "GLS63 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061640.7205737
+},
+{
+  "_id": {
+    "$oid": "69ebcf22f866a1403ac3240a"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "GT 43 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061666.9826865
+},
+{
+  "_id": {
+    "$oid": "69ebcf38f866a1403ac3240b"
+  },
+  "year": "2026",
+  "model": "GT 43 AMG",
+  "engine": "3.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061688.9428513
+},
+{
+  "_id": {
+    "$oid": "69ebcf52f866a1403ac3240c"
+  },
+  "model": "GT 55 AMG",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061714.8914218
+},
+{
+  "_id": {
+    "$oid": "69ebcf6cf866a1403ac3240d"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "4.0",
+  "model": "GT 63 AMG",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061740.4863567
+},
+{
+  "_id": {
+    "$oid": "69ebcf89f866a1403ac3240e"
+  },
+  "model": "GT 63 Pro AMG",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061769.3433423
+},
+{
+  "_id": {
+    "$oid": "69ebcfa3f866a1403ac3240f"
+  },
+  "year": "2026",
+  "model": "GT 63 S E Performance AMG",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061795.0686276
+},
+{
+  "_id": {
+    "$oid": "69ebcfbef866a1403ac32410"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "4.0",
+  "model": "Maybach GLS600",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061822.8194542
+},
+{
+  "_id": {
+    "$oid": "69ebcfd8f866a1403ac32411"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "4.0",
+  "model": "Maybach SL680",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061848.6617627
+},
+{
+  "_id": {
+    "$oid": "69ebcff4f866a1403ac32412"
+  },
+  "model": "SL43 AMG",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061876.4550567
+},
+{
+  "_id": {
+    "$oid": "69ebd03bf866a1403ac32413"
+  },
+  "model": "SL63 AMG",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061947.5548658
+},
+{
+  "_id": {
+    "$oid": "69ebd056f866a1403ac32414"
+  },
+  "year": "2026",
+  "model": "SL63 S E Performance AMG",
+  "engine": "4.0",
+  "make": "Mercedes-Benz",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777061974.7844694
+},
+{
+  "_id": {
+    "$oid": "69ebd070f866a1403ac32415"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "Sprinter 2500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062000.661124
+},
+{
+  "_id": {
+    "$oid": "69ebd08af866a1403ac32416"
+  },
+  "submodel": "_NA_",
+  "make": "Mercedes-Benz",
+  "engine": "2.0",
+  "model": "Sprinter 3500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062026.6767538
+},
+{
+  "_id": {
+    "$oid": "69ebd0a3f866a1403ac32417"
+  },
+  "model": "Sprinter 3500XD",
+  "engine": "2.0",
+  "make": "Mercedes-Benz",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062051.9030778
+},
+{
+  "_id": {
+    "$oid": "69ebd0c0f866a1403ac32418"
+  },
+  "model": "Cooper",
+  "engine": "2.0",
+  "make": "MINI",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062080.3192754
+},
+{
+  "_id": {
+    "$oid": "69ebd0e9f866a1403ac32419"
+  },
+  "submodel": "_NA_",
+  "make": "MINI",
+  "engine": "2.0",
+  "model": "Cooper Countryman",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062121.5180016
+},
+{
+  "_id": {
+    "$oid": "69ebd119f866a1403ac3241a"
+  },
+  "submodel": "_NA_",
+  "make": "Mitsubishi",
+  "engine": "2.0",
+  "model": "Outlander Sport",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062169.2586746
+},
+{
+  "_id": {
+    "$oid": "69ebd130f866a1403ac3241b"
+  },
+  "submodel": "_NA_",
+  "make": "Mitsubishi",
+  "engine": "2.4",
+  "model": "Outlander Sport",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062192.295192
+},
+{
+  "_id": {
+    "$oid": "69ebd14df866a1403ac3241c"
+  },
+  "model": "Armada",
+  "engine": "3.5",
+  "make": "Nissan",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062221.0426154
+},
+{
+  "_id": {
+    "$oid": "69ebd167f866a1403ac3241d"
+  },
+  "submodel": "_NA_",
+  "make": "Nissan",
+  "engine": "3.8",
+  "model": "Frontier",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062247.076752
+},
+{
+  "_id": {
+    "$oid": "69ebd1bcf866a1403ac3241e"
+  },
+  "submodel": "_NA_",
+  "make": "Nissan",
+  "engine": "1.5",
+  "model": "Rogue",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062332.7864397
+},
+{
+  "_id": {
+    "$oid": "69ebd202f866a1403ac3241f"
+  },
+  "submodel": "_NA_",
+  "make": "Porsche",
+  "engine": "3.0",
+  "model": "911",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062402.3167112
+},
+{
+  "_id": {
+    "$oid": "69ebd22ff866a1403ac32420"
+  },
+  "submodel": "_NA_",
+  "make": "Porsche",
+  "engine": "3.0",
+  "model": "Cayenne",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062447.0139217
+},
+{
+  "_id": {
+    "$oid": "69ebd245f866a1403ac32421"
+  },
+  "submodel": "_NA_",
+  "make": "Porsche",
+  "engine": "4.0",
+  "model": "Cayenne",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062469.3999052
+},
+{
+  "_id": {
+    "$oid": "69ebd263f866a1403ac32422"
+  },
+  "submodel": "_NA_",
+  "make": "Porsche",
+  "engine": "2.9",
+  "model": "Panamera",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062499.2343087
+},
+{
+  "_id": {
+    "$oid": "69ebd279f866a1403ac32423"
+  },
+  "year": "2026",
+  "model": "Panamera",
+  "engine": "4.0",
+  "make": "Porsche",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062521.0411587
+},
+{
+  "_id": {
+    "$oid": "69ebd299f866a1403ac32424"
+  },
+  "submodel": "_NA_",
+  "make": "RAM",
+  "engine": "3.0",
+  "model": "1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062553.2127273
+},
+{
+  "_id": {
+    "$oid": "69ebd2b0f866a1403ac32425"
+  },
+  "submodel": "_NA_",
+  "make": "RAM",
+  "engine": "3.6",
+  "model": "1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062576.4880643
+},
+{
+  "_id": {
+    "$oid": "69ebd2c6f866a1403ac32426"
+  },
+  "model": "1500",
+  "engine": "5.7",
+  "make": "RAM",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062598.7699533
+},
+{
+  "_id": {
+    "$oid": "69ebd2e0f866a1403ac32427"
+  },
+  "model": "2500 HD",
+  "engine": "6.4",
+  "make": "RAM",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062624.8958664
+},
+{
+  "_id": {
+    "$oid": "69ebd2f7f866a1403ac32428"
+  },
+  "submodel": "_NA_",
+  "make": "RAM",
+  "engine": "6.7",
+  "model": "2500 HD",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062647.2638657
+},
+{
+  "_id": {
+    "$oid": "69ebd318f866a1403ac32429"
+  },
+  "year": "2026",
+  "model": "3500 HD",
+  "engine": "6.4",
+  "make": "RAM",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062680.5070028
+},
+{
+  "_id": {
+    "$oid": "69ebd32ef866a1403ac3242a"
+  },
+  "year": "2026",
+  "model": "3500 HD",
+  "engine": "6.7",
+  "make": "RAM",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062702.4159882
+},
+{
+  "_id": {
+    "$oid": "69ebd348f866a1403ac3242b"
+  },
+  "submodel": "_NA_",
+  "make": "RAM",
+  "engine": "3.6",
+  "model": "ProMaster 1500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062728.6125164
+},
+{
+  "_id": {
+    "$oid": "69ebd363f866a1403ac3242c"
+  },
+  "submodel": "_NA_",
+  "make": "RAM",
+  "engine": "3.6",
+  "model": "ProMaster 2500",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062755.1987343
+},
+{
+  "_id": {
+    "$oid": "69ebd37cf866a1403ac3242d"
+  },
+  "model": "ProMaster 3500",
+  "engine": "3.6",
+  "make": "RAM",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062780.8807044
+},
+{
+  "_id": {
+    "$oid": "69ebd3b0f866a1403ac3242e"
+  },
+  "year": "2026",
+  "model": "Ascent",
+  "engine": "2.4",
+  "make": "Subaru",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062832.5097818
+},
+{
+  "_id": {
+    "$oid": "69ebd3ddf866a1403ac3242f"
+  },
+  "year": "2026",
+  "model": "Crosstrek",
+  "engine": "2.5",
+  "make": "Subaru",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062877.7102914
+},
+{
+  "_id": {
+    "$oid": "69ebd3f7f866a1403ac32430"
+  },
+  "submodel": "_NA_",
+  "make": "Subaru",
+  "engine": "2.0",
+  "model": "Impreza",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062903.7324753
+},
+{
+  "_id": {
+    "$oid": "69ebd40ef866a1403ac32431"
+  },
+  "submodel": "_NA_",
+  "make": "Subaru",
+  "engine": "2.5",
+  "model": "Impreza",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062926.7808332
+},
+{
+  "_id": {
+    "$oid": "69ebd428f866a1403ac32432"
+  },
+  "model": "Outback",
+  "engine": "2.4",
+  "make": "Subaru",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062952.8574047
+},
+{
+  "_id": {
+    "$oid": "69ebd43ff866a1403ac32433"
+  },
+  "year": "2026",
+  "model": "Outback",
+  "engine": "2.5",
+  "make": "Subaru",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777062975.2292943
+},
+{
+  "_id": {
+    "$oid": "69ebd487f866a1403ac32434"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.4",
+  "model": "4Runner",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063047.5684006
+},
+{
+  "_id": {
+    "$oid": "69ebd4bcf866a1403ac32435"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.5",
+  "model": "Camry",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063100.119878
+},
+{
+  "_id": {
+    "$oid": "69ebd4d4f866a1403ac32436"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "1.8",
+  "model": "Corolla",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063124.9281654
+},
+{
+  "_id": {
+    "$oid": "69ebd4eaf866a1403ac32437"
+  },
+  "model": "Corolla",
+  "engine": "2.0",
+  "make": "Toyota",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063146.8930295
+},
+{
+  "_id": {
+    "$oid": "69ebd505f866a1403ac32438"
+  },
+  "year": "2026",
+  "model": "Corolla Cross",
+  "engine": "2.0",
+  "make": "Toyota",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063173.794978
+},
+{
+  "_id": {
+    "$oid": "69ebd51ff866a1403ac32439"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.4",
+  "model": "Crown",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063199.2965732
+},
+{
+  "_id": {
+    "$oid": "69ebd535f866a1403ac3243a"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.5",
+  "model": "Crown",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063221.8689299
+},
+{
+  "_id": {
+    "$oid": "69ebd54ff866a1403ac3243b"
+  },
+  "model": "Crown Signia",
+  "engine": "2.5",
+  "make": "Toyota",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063247.7462454
+},
+{
+  "_id": {
+    "$oid": "69ebd569f866a1403ac3243c"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "1.6",
+  "model": "GR Corolla",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063273.1291735
+},
+{
+  "_id": {
+    "$oid": "69ebd582f866a1403ac3243d"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.4",
+  "model": "GR86",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063298.1862044
+},
+{
+  "_id": {
+    "$oid": "69ebd59df866a1403ac3243e"
+  },
+  "year": "2026",
+  "model": "Grand Highlander",
+  "engine": "2.4",
+  "make": "Toyota",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063325.389215
+},
+{
+  "_id": {
+    "$oid": "69ebd5b4f866a1403ac3243f"
+  },
+  "year": "2026",
+  "model": "Grand Highlander",
+  "engine": "2.5",
+  "make": "Toyota",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063348.3777246
+},
+{
+  "_id": {
+    "$oid": "69ebd5d2f866a1403ac32440"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.4",
+  "model": "Land Cruiser",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063378.1624315
+},
+{
+  "_id": {
+    "$oid": "69ebd600f866a1403ac32441"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.0",
+  "model": "Prius",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063424.4181724
+},
+{
+  "_id": {
+    "$oid": "69ebd61af866a1403ac32442"
+  },
+  "model": "Sequoia",
+  "engine": "3.4",
+  "make": "Toyota",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063450.2270367
+},
+{
+  "_id": {
+    "$oid": "69ebd634f866a1403ac32443"
+  },
+  "year": "2026",
+  "model": "Sienna",
+  "engine": "2.5",
+  "make": "Toyota",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063476.488235
+},
+{
+  "_id": {
+    "$oid": "69ebd64ff866a1403ac32444"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "3.0",
+  "model": "Supra",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063503.2708116
+},
+{
+  "_id": {
+    "$oid": "69ebd669f866a1403ac32445"
+  },
+  "submodel": "_NA_",
+  "make": "Toyota",
+  "engine": "2.4",
+  "model": "Tacoma",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063529.0733993
+},
+{
+  "_id": {
+    "$oid": "69ebd683f866a1403ac32446"
+  },
+  "model": "Tundra",
+  "engine": "3.4",
+  "make": "Toyota",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063555.5384095
+},
+{
+  "_id": {
+    "$oid": "69ebd6a1f866a1403ac32447"
+  },
+  "model": "Atlas",
+  "engine": "2.0",
+  "make": "Volkswagen",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063585.2590768
+},
+{
+  "_id": {
+    "$oid": "69ebd6baf866a1403ac32448"
+  },
+  "submodel": "_NA_",
+  "make": "Volkswagen",
+  "engine": "2.0",
+  "model": "Atlas Cross Sport",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063610.3207674
+},
+{
+  "_id": {
+    "$oid": "69ebd6d3f866a1403ac32449"
+  },
+  "submodel": "_NA_",
+  "make": "Volkswagen",
+  "engine": "2.0",
+  "model": "Golf R",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063635.9557338
+},
+{
+  "_id": {
+    "$oid": "69ebd6edf866a1403ac3244a"
+  },
+  "year": "2026",
+  "model": "GTI",
+  "engine": "2.0",
+  "make": "Volkswagen",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063661.3485477
+},
+{
+  "_id": {
+    "$oid": "69ebd741f866a1403ac3244b"
+  },
+  "model": "Taos",
+  "engine": "1.5",
+  "make": "Volkswagen",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063745.6637673
+},
+{
+  "_id": {
+    "$oid": "69ebd75af866a1403ac3244c"
+  },
+  "model": "Tiguan",
+  "engine": "2.0",
+  "make": "Volkswagen",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063770.6163535
+},
+{
+  "_id": {
+    "$oid": "69ebd7b2f866a1403ac3244d"
+  },
+  "submodel": "_NA_",
+  "make": "Volvo",
+  "engine": "2.0",
+  "model": "V60 Cross Country",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063858.4223647
+},
+{
+  "_id": {
+    "$oid": "69ebd7cbf866a1403ac3244e"
+  },
+  "submodel": "_NA_",
+  "make": "Volvo",
+  "engine": "2.0",
+  "model": "XC40",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063883.6371536
+},
+{
+  "_id": {
+    "$oid": "69ebd7e4f866a1403ac3244f"
+  },
+  "year": "2026",
+  "model": "XC60",
+  "engine": "2.0",
+  "make": "Volvo",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063908.8901644
+},
+{
+  "_id": {
+    "$oid": "69ebd7fff866a1403ac32450"
+  },
+  "model": "XC90",
+  "engine": "2.0",
+  "make": "Volvo",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777063935.6644099
+},
+{
+  "_id": {
+    "$oid": "69ec7baadd5fd0e281766045"
+  },
+  "submodel": "A-Spec",
+  "model": "Integra",
+  "engine": "1.5",
+  "make": "Acura",
+  "year": "2024",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777108463.913049
+},
+{
+  "_id": {
+    "$oid": "69ec7ca7dd5fd0e281766046"
+  },
+  "submodel": "Base",
+  "model": "Integra",
+  "engine": "1.5",
+  "make": "Acura",
+  "year": "2024",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777108550.8384333
+},
+{
+  "_id": {
+    "$oid": "69f9a5a3f632ff02cbfe7f72"
+  },
+  "submodel": "_NA_",
+  "model": "ADX",
+  "engine": "1.5",
+  "make": "Acura",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777971298.3321006
+},
+{
+  "_id": {
+    "$oid": "69f9a790f632ff02cbfe7f73"
+  },
+  "submodel": "_NA_",
+  "model": "A5 Quattro",
+  "engine": "2.0",
+  "make": "Audi",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969040.3915339
+},
+{
+  "_id": {
+    "$oid": "69f9a7acf632ff02cbfe7f74"
+  },
+  "make": "Audi",
+  "engine": "3.0",
+  "model": "A6 Quattro",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969068.6448727
+},
+{
+  "_id": {
+    "$oid": "69f9a7c8f632ff02cbfe7f75"
+  },
+  "year": "2026",
+  "make": "Audi",
+  "engine": "2.0",
+  "model": "Q3",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969096.339958
+},
+{
+  "_id": {
+    "$oid": "69f9a7fff632ff02cbfe7f76"
+  },
+  "submodel": "_NA_",
+  "model": "Q5",
+  "engine": "2.0",
+  "make": "Audi",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969151.6047127
+},
+{
+  "_id": {
+    "$oid": "69f9a80df632ff02cbfe7f77"
+  },
+  "make": "Audi",
+  "engine": "2.0",
+  "model": "Q5 Sportback",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969165.9435396
+},
+{
+  "_id": {
+    "$oid": "69f9a8a5f632ff02cbfe7f78"
+  },
+  "submodel": "_NA_",
+  "model": "S5",
+  "engine": "3.0",
+  "make": "Audi",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969317.563044
+},
+{
+  "_id": {
+    "$oid": "69f9a8c1f632ff02cbfe7f79"
+  },
+  "submodel": "_NA_",
+  "model": "SQ5",
+  "engine": "3.0",
+  "make": "Audi",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969345.5222645
+},
+{
+  "_id": {
+    "$oid": "69f9a8cff632ff02cbfe7f7a"
+  },
+  "year": "2026",
+  "make": "Audi",
+  "engine": "3.0",
+  "model": "SQ5 Sportback",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969359.8166225
+},
+{
+  "_id": {
+    "$oid": "69f9a9b6f632ff02cbfe7f7b"
+  },
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "740i xDrive",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969590.1629398
+},
+{
+  "_id": {
+    "$oid": "69f9a9eff632ff02cbfe7f7c"
+  },
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "840i Gran Coupe",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969647.5266268
+},
+{
+  "_id": {
+    "$oid": "69f9aa0cf632ff02cbfe7f7d"
+  },
+  "year": "2026",
+  "make": "BMW",
+  "engine": "3.0",
+  "model": "840i xDrive",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969676.1004229
+},
+{
+  "_id": {
+    "$oid": "69f9aaa0f632ff02cbfe7f7e"
+  },
+  "submodel": "_NA_",
+  "model": "M240i xDrive",
+  "engine": "3.0",
+  "make": "BMW",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969824.556824
+},
+{
+  "_id": {
+    "$oid": "69f9ab2bf632ff02cbfe7f7f"
+  },
+  "submodel": "_NA_",
+  "model": "M850i Gran Coupe xDrive",
+  "engine": "4.4",
+  "make": "BMW",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777969963.6843836
+},
+{
+  "_id": {
+    "$oid": "69f9ad92f632ff02cbfe7f80"
+  },
+  "submodel": "_NA_",
+  "model": "Express 2500",
+  "engine": "4.3",
+  "make": "Chevrolet",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970578.7191148
+},
+{
+  "_id": {
+    "$oid": "69f9ad9df632ff02cbfe7f81"
+  },
+  "submodel": "_NA_",
+  "model": "Express 2500",
+  "engine": "6.6",
+  "make": "Chevrolet",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970589.5754464
+},
+{
+  "_id": {
+    "$oid": "69f9adabf632ff02cbfe7f82"
+  },
+  "make": "Chevrolet",
+  "engine": "4.3",
+  "model": "Express 3500",
+  "year": "2026",
+  "submodel": "_NA_",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970603.8018396
+},
+{
+  "_id": {
+    "$oid": "69f9adb7f632ff02cbfe7f83"
+  },
+  "submodel": "_NA_",
+  "model": "Express 3500",
+  "engine": "6.6",
+  "make": "Chevrolet",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970615.0449212
+},
+{
+  "_id": {
+    "$oid": "69f9ae6cf632ff02cbfe7f84"
+  },
+  "submodel": "_NA_",
+  "model": "Trailblazer",
+  "engine": "1.2",
+  "make": "Chevrolet",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970796.1974883
+},
+{
+  "_id": {
+    "$oid": "69f9af03f632ff02cbfe7f85"
+  },
+  "submodel": "_NA_",
+  "model": "Bronco Sport",
+  "engine": "1.5",
+  "make": "Ford",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970947.604758
+},
+{
+  "_id": {
+    "$oid": "69f9af0cf632ff02cbfe7f86"
+  },
+  "submodel": "_NA_",
+  "model": "Bronco Sport",
+  "engine": "2.0",
+  "make": "Ford",
+  "year": "2026",
+  "options": {
+    "FUEL TYPE": "Not Available",
+    "ENGINE CODE": "Not Available",
+    "BODY STYLE": "Not Available",
+    "DRIVE TYPE": "Not Available",
+    "TRANSFER CASE TYPE": "Not Available",
+    "TRANSMISSION CONTROL TYPE": "Not Available",
+    "TRANSMISSION CODE": "Not Available"
+  },
+  "timestamp": 1777970956.9780002
+}]

@@ -3,8 +3,12 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import os
 import uvicorn
-from .db import db
-from .routes import vehicles, data, upload
+try:
+    from .db import db
+    from .routes import vehicles, data, upload
+except ImportError:
+    from db import db
+    from routes import vehicles, data, upload
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,10 +22,17 @@ app.include_router(upload.router)
 
 @app.get("/")
 async def home(request: Request):
-    # Fetch all unique years from the master collection
+    # Fetch years from master list
     years_doc = await db.years.find_one({})
-    years = years_doc.get("values", []) if years_doc else []
-    return templates.TemplateResponse("index.html", {"request": request, "years": sorted(years, reverse=True)})
+    master_years = set(years_doc.get("values", []) if years_doc else [])
+    
+    # Also fetch unique years currently in the vehicles collection (backup)
+    vehicle_years = await db.vehicles.distinct("year")
+    
+    # Combine and sort
+    all_years = sorted(list(master_years.union(set(vehicle_years))), reverse=True)
+    
+    return templates.TemplateResponse(request, "index.html", {"years": all_years})
 
 @app.get("/vehicle/{vehicle_id}")
 async def vehicle_detail(request: Request, vehicle_id: str):
@@ -30,7 +41,7 @@ async def vehicle_detail(request: Request, vehicle_id: str):
     if not v:
         return "Vehicle not found", 404
     v["_id"] = str(v["_id"])
-    return templates.TemplateResponse("vehicle.html", {"request": request, "vehicle": v})
+    return templates.TemplateResponse(request, "vehicle.html", {"vehicle": v})
 
 if __name__ == "__main__":
-    uvicorn.run("dashboard.app:app", host="0.0.0.0", port=8081, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8081)

@@ -1,6 +1,9 @@
 from fastapi import APIRouter, Request, HTTPException
 from bson import ObjectId
-from ..db import db, CATEGORY_MAP
+try:
+    from ..db import db, CATEGORY_MAP
+except ImportError:
+    from db import db, CATEGORY_MAP
 
 router = APIRouter(prefix="/api")
 

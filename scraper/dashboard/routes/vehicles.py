@@ -1,6 +1,9 @@
 from fastapi import APIRouter, Request, HTTPException
 from bson import ObjectId
-from ..db import db, CATEGORY_MAP
+try:
+    from ..db import db, CATEGORY_MAP
+except ImportError:
+    from db import db, CATEGORY_MAP
 
 router = APIRouter(prefix="/api")
 
@@ -36,12 +39,28 @@ async def create_vehicle(request: Request):
         "model": data.get("model", "").strip(),
         "engine": data.get("engine", "").strip(),
         "submodel": data.get("submodel", "").strip(),
-        "options": []
+        "options": {
+            "FUEL TYPE": "Not Available",
+            "ENGINE CODE": "Not Available",
+            "BODY STYLE": "Not Available",
+            "DRIVE TYPE": "Not Available",
+            "TRANSFER CASE TYPE": "Not Available",
+            "TRANSMISSION CONTROL TYPE": "Not Available",
+            "TRANSMISSION CODE": "Not Available"
+        }
     }
-    if not all([doc["year"], doc["make"], doc["model"], doc["engine"], doc["submodel"]]):
-        raise HTTPException(status_code=400, detail="Missing required fields")
+    if not doc["year"]:
+        raise HTTPException(status_code=400, detail="Year is required")
     
     result = await db.vehicles.insert_one(doc)
+    
+    # Ensure year exists in master list
+    await db.years.update_one(
+        {"type": "all"},
+        {"$addToSet": {"values": doc["year"]}},
+        upsert=True
+    )
+    
     return {"id": str(result.inserted_id), "message": "Vehicle created"}
 
 @router.get("/vehicles/{vehicle_id}")

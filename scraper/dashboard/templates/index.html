@@ -467,41 +467,6 @@
             ids.forEach(id => document.getElementById(id).innerHTML = '<div class="text-xs text-slate-600 px-2 italic">Select parent...</div>');
         }
 
-        async function editHierarchy(level, oldValue) {
-            const newValue = prompt(`Enter new value for ${level} "${oldValue}":`, oldValue);
-            if (!newValue || newValue === oldValue) return;
-
-            const payload = { level, oldValue, newValue };
-            if (level === 'make') payload.year = selectedYear;
-            if (level === 'model') { payload.year = selectedYear; payload.make = selectedMake; }
-            if (level === 'engine') { payload.year = selectedYear; payload.make = selectedMake; payload.model = selectedModel; }
-
-            const res = await fetch('/api/hierarchy/update', {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            if (res.ok) window.location.reload();
-            else alert('Error updating hierarchy');
-        }
-
-        async function deleteHierarchy(level, value) {
-            if (!confirm(`Are you sure you want to delete ${level} "${value}" and ALL associated vehicles?`)) return;
-
-            const payload = { level, value };
-            if (level === 'make') payload.year = selectedYear;
-            if (level === 'model') { payload.year = selectedYear; payload.make = selectedMake; }
-            if (level === 'engine') { payload.year = selectedYear; payload.make = selectedMake; payload.model = selectedModel; }
-
-            const res = await fetch('/api/hierarchy/delete', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            if (res.ok) window.location.reload();
-            else alert('Error deleting hierarchy');
-        }
-
         // ── VEHICLE MODAL ─────────────────────────────────────────────────────
         function openAddVehicleModal(column) {
             document.getElementById('modalTitle').textContent = 'Add Vehicle';
@@ -592,8 +557,27 @@
             const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
             const data = await res.json();
             if (!res.ok) { showModalError(data.detail || 'Error saving vehicle'); return; }
+            
             closeVehicleModal();
-            window.location.reload();
+
+            // Smart Refresh without page reload
+            if (payload.year && !selectedYear) {
+                await refreshYearSidebar();
+            } else {
+                if (payload.make && selectedYear) await loadMakes(selectedYear);
+                if (payload.model && selectedMake) await loadModels(selectedYear, selectedMake);
+                if (payload.engine && selectedModel) await loadEngines(selectedYear, selectedMake, selectedModel);
+                if (payload.submodel && selectedEngine) await loadSubmodels(selectedYear, selectedMake, selectedModel, selectedEngine);
+            }
+        }
+
+        async function refreshYearSidebar() {
+            const res = await fetch('/');
+            const text = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const newYearList = doc.getElementById('yearList').innerHTML;
+            document.getElementById('yearList').innerHTML = newYearList;
         }
 
         // ── DELETE MODAL ──────────────────────────────────────────────────────
@@ -607,7 +591,59 @@
             const id = document.getElementById('deleteVehicleId').value;
             await fetch(`/api/vehicles/${id}`, { method: 'DELETE' });
             closeDeleteModal();
-            window.location.reload();
+            // Refresh current view
+            if (selectedEngine) await loadSubmodels(selectedYear, selectedMake, selectedModel, selectedEngine);
+        }
+
+        // ── HIERARCHY HELPERS ────────────────────────────────────────────────
+        async function editHierarchy(level, oldValue) {
+            const newValue = prompt(`Rename ${level} "${oldValue}" to:`, oldValue);
+            if (!newValue || newValue === oldValue) return;
+
+            const payload = { level, oldValue, newValue, year: selectedYear, make: selectedMake, model: selectedModel };
+            const res = await fetch('/api/hierarchy/update', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (res.ok) {
+                if (level === 'year') await refreshYearSidebar();
+                else if (level === 'make') await loadMakes(selectedYear);
+                else if (level === 'model') await loadModels(selectedYear, selectedMake);
+                else if (level === 'engine') await loadEngines(selectedYear, selectedMake, selectedModel);
+            }
+        }
+
+        async function deleteHierarchy(level, value) {
+            if (!confirm(`Are you sure you want to delete ${level} "${value}" and ALL associated data?`)) return;
+
+            const payload = { level, value, year: selectedYear, make: selectedMake, model: selectedModel };
+            const res = await fetch('/api/hierarchy/delete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (res.ok) {
+                if (level === 'year') {
+                    selectedYear = null;
+                    await refreshYearSidebar();
+                    resetColumns(['makeList', 'modelList', 'engineList', 'submodelList']);
+                } else if (level === 'make') {
+                    selectedMake = null;
+                    await loadMakes(selectedYear);
+                    resetColumns(['modelList', 'engineList', 'submodelList']);
+                } else if (level === 'model') {
+                    selectedModel = null;
+                    await loadModels(selectedYear, selectedMake);
+                    resetColumns(['engineList', 'submodelList']);
+                } else if (level === 'engine') {
+                    selectedEngine = null;
+                    await loadEngines(selectedYear, selectedMake, selectedModel);
+                    resetColumns(['submodelList']);
+                }
+            }
         }
 
         function showModalError(msg) {
