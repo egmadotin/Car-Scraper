@@ -6,10 +6,27 @@
     <title>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }} - Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Quill Rich Text Editor -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <style>
         body { font-family: 'Outfit', sans-serif; background-color: #0f172a; color: #f1f5f9; }
         .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-grad { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 100; display: flex; align-items: center; justify-content: center; }
+        .modal-box { background: #1e293b; border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5rem; padding: 2rem; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; box-shadow: 0 25px 60px rgba(0,0,0,0.5); }
+        .form-input { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 0.6rem 1rem; color: #f1f5f9; font-size: 0.875rem; outline: none; transition: border-color 0.2s; }
+        .form-input:focus { border-color: #3b82f6; }
+        .btn-primary { background: #3b82f6; color: white; border-radius: 0.75rem; padding: 0.6rem 1.5rem; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 0.2s; }
+        .btn-primary:hover { background: #2563eb; }
+        .ql-container { background: #0f172a; color: #f1f5f9; border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem; font-family: 'Outfit', sans-serif; }
+        .ql-toolbar { background: #1e293b; border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; border-color: #334155 !important; }
+        .ql-stroke { stroke: #94a3b8 !important; }
+        .ql-fill { fill: #94a3b8 !important; }
+        .ql-picker { color: #94a3b8 !important; }
+        .active-tab { background-color: #3b82f6 !important; color: white !important; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3); }
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
     </style>
 </head>
 <body class="min-h-screen">
@@ -28,310 +45,611 @@
         </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-4 py-12">
+    <main class="max-w-6xl mx-auto px-4 py-8">
         <!-- Hero Card -->
-        <div class="hero-grad rounded-3xl p-12 border border-slate-800 shadow-2xl mb-12 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
-                <svg class="w-64 h-64" fill="currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"></path></svg>
+        <div class="hero-grad rounded-3xl p-10 border border-slate-800 shadow-2xl mb-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
+                <svg class="w-48 h-48" fill="currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"></path></svg>
             </div>
             
             <div class="relative z-10">
-                <div class="inline-block px-4 py-1 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-6">Identification</div>
-                <h2 class="text-6xl font-black text-white mb-8 tracking-tighter">{{ vehicle.make }} <span class="text-blue-500">{{ vehicle.model }}</span></h2>
+                <div class="inline-block px-4 py-1 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">Identification</div>
+                <h2 class="text-5xl font-black text-white mb-6 tracking-tighter">{{ vehicle.make }} <span class="text-blue-500">{{ vehicle.model }}</span></h2>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Year</p>
-                        <p class="text-2xl font-black text-white">{{ vehicle.year }}</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Year</p>
+                        <p class="text-xl font-black text-white">{{ vehicle.year }}</p>
                     </div>
                     <div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Engine</p>
-                        <p class="text-2xl font-black text-white">{{ vehicle.engine }}</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Engine</p>
+                        <p class="text-xl font-black text-white">{{ vehicle.engine }}</p>
                     </div>
                     <div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Submodel</p>
-                        <p class="text-2xl font-black text-white">{{ vehicle.submodel }}</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Submodel</p>
+                        <p class="text-xl font-black text-white">{{ vehicle.submodel }}</p>
                     </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Captured On</p>
-                        <p class="text-sm font-bold text-slate-300 mt-2">{{ vehicle.timestamp|round|int }}</p>
+                    <div class="flex items-center">
+                        <button onclick="openEditVehicleModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all border border-slate-700">Edit Basic Info</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Tabs Navigation -->
-        <div class="mb-10">
-            <div class="flex flex-wrap gap-2 bg-slate-800/30 p-3 rounded-3xl border border-slate-800/50 justify-center" id="tab-bar">
-                <button onclick="switchTab('id')" id="tab-id" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-500/20">ID & Options</button>
-                <button onclick="switchTab('tsbs')" id="tab-tsbs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Technical Bulletins</button>
-                <button onclick="switchTab('specs')" id="tab-specs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Common Specs</button>
-                <button onclick="switchTab('adas')" id="tab-adas" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Driver Assist ADAS</button>
-                <button onclick="switchTab('fluids')" id="tab-fluids" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Fluid Capacities</button>
-                <button onclick="switchTab('tires')" id="tab-tires" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Tire Information & Lifting Points</button>
-                <button onclick="switchTab('resets')" id="tab-resets" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Reset Procedures</button>
-                <button onclick="switchTab('dtcs')" id="tab-dtcs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">DTC Index</button>
-                <button onclick="switchTab('wiring')" id="tab-wiring" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Wiring Diagrams</button>
-                <button onclick="switchTab('locations')" id="tab-locations" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Component Locations</button>
-                <button onclick="switchTab('tests')" id="tab-tests" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Component Tests</button>
-                <button onclick="switchTab('manual')" id="tab-manual" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white hover:bg-slate-700/50 border border-transparent hover:border-slate-700">Service Manual</button>
+        <div class="mb-8 overflow-x-auto no-scrollbar">
+            <div class="flex flex-nowrap gap-2 bg-slate-800/30 p-2 rounded-2xl border border-slate-800/50 min-w-max" id="tab-bar">
+                <button onclick="switchTab('id')" id="tab-id" class="active-tab px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">ID & Options</button>
+                <button onclick="switchTab('tsbs')" id="tab-tsbs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">TSBs</button>
+                <button onclick="switchTab('specs')" id="tab-specs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Specs</button>
+                <button onclick="switchTab('adas')" id="tab-adas" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">ADAS</button>
+                <button onclick="switchTab('fluids')" id="tab-fluids" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Fluids</button>
+                <button onclick="switchTab('tires')" id="tab-tires" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Tires</button>
+                <button onclick="switchTab('resets')" id="tab-resets" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Resets</button>
+                <button onclick="switchTab('dtcs')" id="tab-dtcs" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">DTCs</button>
+                <button onclick="switchTab('wiring')" id="tab-wiring" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Wiring</button>
+                <button onclick="switchTab('locations')" id="tab-locations" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Locations</button>
+                <button onclick="switchTab('tests')" id="tab-tests" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Tests</button>
+                <button onclick="switchTab('manual')" id="tab-manual" class="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-slate-400 hover:text-white">Manual</button>
             </div>
         </div>
 
         <!-- Content Area -->
-        <div id="content-container" class="min-h-[400px]">
-            <!-- ID & Options (Default) -->
-            <div id="id-content" class="tab-pane active">
-                <div class="glass rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
-                    <div class="px-8 py-6 border-b border-slate-800 bg-slate-800/30 flex justify-between items-center">
-                        <h3 class="text-xl font-bold text-white">Identification Options</h3>
-                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-lg text-[10px] font-bold uppercase tracking-widest">{{ vehicle.options|length }} Fields</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <tbody class="divide-y divide-slate-800">
-                                {% for key, val in vehicle.options.items() %}
-                                <tr class="hover:bg-blue-500/5 transition-colors">
-                                    <td class="px-8 py-5 text-sm font-bold text-slate-400 w-1/3">{{ key }}</td>
-                                    <td class="px-8 py-5">
-                                        <span class="text-sm font-mono text-blue-400">{{ val }}</span>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Generic Category Content -->
-            <div id="category-content" class="tab-pane hidden">
-                <div id="category-loader" class="glass rounded-3xl p-12 text-center border border-slate-800">
-                    <div class="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
-                    <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">Loading technical data...</p>
-                </div>
-                <div id="category-data" class="space-y-6"></div>
-            </div>
-        </div>
-
-        <script>
-            let currentTab = 'id';
-            const vehicleId = "{{ vehicle._id }}";
-
-            async function switchTab(tabId) {
-                // Update Buttons
-                document.querySelectorAll('#tab-bar button').forEach(btn => {
-                    btn.classList.remove('bg-blue-600', 'text-white');
-                    btn.classList.add('text-slate-400');
-                });
-                const activeBtn = document.getElementById(`tab-${tabId}`);
-                activeBtn.classList.add('bg-blue-600', 'text-white');
-                activeBtn.classList.remove('text-slate-400');
-
-                // Update Visibility
-                document.getElementById('id-content').classList.add('hidden');
-                document.getElementById('category-content').classList.remove('hidden');
-                
-                if (tabId === 'id') {
-                    document.getElementById('id-content').classList.remove('hidden');
-                    document.getElementById('category-content').classList.add('hidden');
-                } else if (tabId === 'manual') {
-                    await fetchManual();
-                } else {
-                    await fetchCategory(tabId);
-                }
-                currentTab = tabId;
-            }
-
-            async function fetchCategory(category) {
-                const dataDisplay = document.getElementById('category-data');
-                const loader = document.getElementById('category-loader');
-                
-                dataDisplay.innerHTML = '';
-                loader.classList.remove('hidden');
-                
-                try {
-                    const response = await fetch(`/api/data/${category}/${vehicleId}`);
-                    const data = await response.json();
-                    loader.classList.add('hidden');
-                    
-                    if (!data || data.length === 0) {
-                        dataDisplay.innerHTML = `
-                            <div class="glass rounded-3xl p-20 text-center border border-slate-800">
-                                <p class="text-slate-500 italic">No data has been extracted for this category yet.</p>
-                            </div>`;
-                        return;
-                    }
-
-                    renderData(category, data);
-                } catch (e) {
-                    loader.innerHTML = `<p class="text-red-500 font-bold">Error loading data: ${e.message}</p>`;
-                }
-            }
-
-            function renderData(category, data) {
-                const container = document.getElementById('category-data');
-                
-                // Logic based on category type
-                if (['specs', 'adas', 'fluids', 'dtcs', 'tests'].includes(category)) {
-                    renderTable(container, data, category);
-                } else if (['tsbs', 'resets'].includes(category)) {
-                    renderArticles(container, data);
-                } else if (category === 'wiring' || category === 'locations') {
-                    renderMedia(container, data);
-                } else if (category === 'tires') {
-                    renderTires(container, data);
-                }
-            }
-
-            function renderTable(container, data, title) {
-                const keys = Object.keys(data[0]).filter(k => k !== '_id' && k !== 'vehicle_id');
-                
-                container.innerHTML = `
+        <div id="content-container">
+            <div id="tab-pane-container">
+                <!-- ID & Options (Default) -->
+                <div id="pane-id" class="tab-pane active">
                     <div class="glass rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
                         <div class="px-8 py-6 border-b border-slate-800 bg-slate-800/30 flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-white capitalize">${title}</h3>
-                            <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-lg text-[10px] font-bold uppercase tracking-widest">${data.length} Records</span>
+                            <h3 class="text-xl font-bold text-white">Identification Options</h3>
+                            <button onclick="openEditVehicleModal()" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition-all">Edit All</button>
                         </div>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left border-collapse">
-                                <thead>
-                                    <tr class="bg-slate-900/50">
-                                        ${keys.map(k => `<th class="px-8 py-4 text-[10px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-800">${k.replace('_', ' ')}</th>`).join('')}
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-800">
-                                    ${data.map(row => `
-                                        <tr class="hover:bg-blue-500/5 transition-colors">
-                                            ${keys.map(k => `<td class="px-8 py-4 text-sm text-slate-300">${row[k] || '-'}</td>`).join('')}
+                                <tbody class="divide-y divide-slate-800" id="options-tbody">
+                                    {% set standard_fields = ['FUEL TYPE', 'ENGINE CODE', 'BODY STYLE', 'DRIVE TYPE', 'TRANSFER CASE TYPE', 'TRANSMISSION CONTROL TYPE', 'TRANSMISSION CODE'] %}
+                                    
+                                    {% for field in standard_fields %}
+                                        {% set field_matches = [] %}
+                                        {% if vehicle.options is iterable and vehicle.options is not mapping %}
+                                            {% for o in vehicle.options if o.key == field %}
+                                                {% set _ = field_matches.append(o.value) %}
+                                            {% endfor %}
+                                        {% elif vehicle.options is mapping %}
+                                            {% if field in vehicle.options %}
+                                                {% set _ = field_matches.append(vehicle.options[field]) %}
+                                            {% endif %}
+                                        {% endif %}
+
+                                        {% if field_matches|length == 0 %}
+                                        <tr class="hover:bg-blue-500/5 transition-colors group">
+                                            <td class="px-8 py-5 text-sm font-bold text-slate-400 w-1/3">{{ field }}</td>
+                                            <td class="px-8 py-5">
+                                                <span class="text-sm font-mono text-slate-600 italic">Not Available</span>
+                                            </td>
+                                            <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <button onclick="openEditVehicleModal()" class="text-blue-400 hover:text-blue-300 text-xs font-bold">Edit</button>
+                                            </td>
                                         </tr>
-                                    `).join('')}
+                                        {% else %}
+                                            {% for val in field_matches %}
+                                            <tr class="hover:bg-blue-500/5 transition-colors group">
+                                                <td class="px-8 py-5 text-sm font-bold text-slate-400 w-1/3">{{ field }}</td>
+                                                <td class="px-8 py-5">
+                                                    <span class="text-sm font-mono text-blue-400">{{ val }}</span>
+                                                </td>
+                                                <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <button onclick="openEditVehicleModal()" class="text-blue-400 hover:text-blue-300 text-xs font-bold">Edit</button>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {# Show any extra custom fields not in standard list #}
+                                    {% if vehicle.options is iterable and vehicle.options is not mapping %}
+                                        {% for opt in vehicle.options if opt.key not in standard_fields %}
+                                        <tr class="hover:bg-blue-500/5 transition-colors group">
+                                            <td class="px-8 py-5 text-sm font-bold text-slate-400 w-1/3">{{ opt.key }}</td>
+                                            <td class="px-8 py-5">
+                                                <span class="text-sm font-mono text-blue-400">{{ opt.value }}</span>
+                                            </td>
+                                            <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <button onclick="openEditVehicleModal()" class="text-blue-400 hover:text-blue-300 text-xs font-bold">Edit</button>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    {% elif vehicle.options is mapping %}
+                                        {% for key, val in vehicle.options.items() if key not in standard_fields %}
+                                        <tr class="hover:bg-blue-500/5 transition-colors group">
+                                            <td class="px-8 py-5 text-sm font-bold text-slate-400 w-1/3">{{ key }}</td>
+                                            <td class="px-8 py-5">
+                                                <span class="text-sm font-mono text-blue-400">{{ val }}</span>
+                                            </td>
+                                            <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <button onclick="openEditVehicleModal()" class="text-blue-400 hover:text-blue-300 text-xs font-bold">Edit</button>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    {% endif %}
                                 </tbody>
                             </table>
                         </div>
-                    </div>`;
-            }
+                    </div>
+                </div>
 
-            function renderArticles(container, data) {
-                container.innerHTML = data.map(item => `
-                    <div class="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden">
-                        <button onclick="toggleElement('${item._id}')" class="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-700/50 transition-colors">
-                            <h4 class="text-lg font-bold text-white">${item.title || item.procedure || 'Technical Article'}</h4>
-                            <svg id="icon-${item._id}" class="w-5 h-5 text-slate-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <!-- Category Content -->
+                <div id="pane-category" class="tab-pane">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 id="category-title" class="text-2xl font-bold text-white capitalize">Category Name</h3>
+                        <button onclick="openAddRecordModal()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all flex items-center shadow-lg shadow-blue-500/20">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                            Add New Entry
                         </button>
-                        <div id="content-${item._id}" class="hidden p-6 border-t border-slate-700 bg-slate-900/30 prose prose-invert max-w-none text-slate-300">
-                            ${item.content_html}
-                        </div>
-                    </div>`).join('');
-            }
+                    </div>
+                    <div id="category-data" class="space-y-6">
+                        <!-- Data injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-            function renderMedia(container, data) {
-                container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    ${data.map(item => `
-                        <div class="glass rounded-3xl overflow-hidden border border-slate-800 shadow-xl group">
-                            <div class="aspect-video bg-slate-900 flex items-center justify-center relative">
-                                <img src="${item.diagram_url || item.image_url}" class="max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-transform" onclick="window.open(this.src)">
-                                <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                                    <h5 class="text-white font-bold">${item.system || item.component || 'Technical Illustration'}</h5>
-                                </div>
-                            </div>
-                            ${item.location_text ? `<div class="p-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800">${item.location_text}</div>` : ''}
-                        </div>
-                    `).join('')}
-                </div>`;
-            }
+    <!-- ═══════════════════════════════════════════════════════════════════════════════
+         MODALS
+         ═══════════════════════════════════════════════════════════════════════════════ -->
 
-            function renderTires(container, data) {
-                const item = data[0];
-                container.innerHTML = `
-                    <div class="space-y-6">
-                        ${item.image_url ? `
-                            <div class="glass rounded-3xl p-8 border border-slate-800">
-                                <h4 class="text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-6">Lifting Points Illustration</h4>
-                                <img src="${item.image_url}" class="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-slate-700" onclick="window.open(this.src)">
-                            </div>` : ''}
-                        <div class="glass rounded-3xl overflow-hidden border border-slate-800 shadow-xl">
-                            <div class="px-8 py-6 border-b border-slate-800 bg-slate-800/30">
-                                <h4 class="text-lg font-bold text-white">Tire & Wheel Specifications</h4>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse">
-                                    <tbody class="divide-y divide-slate-800">
-                                        ${item.specs.map(row => `
-                                            <tr class="hover:bg-blue-500/5 transition-colors">
-                                                ${Object.values(row).map(v => `<td class="px-8 py-4 text-sm text-slate-300">${v}</td>`).join('')}
-                                            </tr>
-                                        `).join('')}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>`;
-            }
+    <!-- Basic Info & Options Modal -->
+    <div id="editVehicleModal" class="modal-overlay hidden">
+        <div class="modal-box max-w-2xl">
+            <h2 class="text-xl font-bold text-white mb-6">Edit Vehicle Identification</h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Year</label>
+                    <input id="edit_v_year" type="text" class="form-input" value="{{ vehicle.year }}">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Make</label>
+                    <input id="edit_v_make" type="text" class="form-input" value="{{ vehicle.make }}">
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Model</label>
+                    <input id="edit_v_model" type="text" class="form-input" value="{{ vehicle.model }}">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Engine</label>
+                    <input id="edit_v_engine" type="text" class="form-input" value="{{ vehicle.engine }}">
+                </div>
+            </div>
+            <div class="mb-8">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Submodel</label>
+                <input id="edit_v_submodel" type="text" class="form-input" value="{{ vehicle.submodel }}">
+            </div>
 
-            async function fetchManual() {
-                const container = document.getElementById('category-data');
-                const loader = document.getElementById('category-loader');
-                container.innerHTML = '';
-                loader.classList.remove('hidden');
+            <!-- Options Section -->
+            <div class="border-t border-slate-800 pt-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-widest">Identification Options</h3>
+                    <button onclick="addOptionRow()" class="text-xs font-bold text-blue-500 hover:text-blue-400">+ Add Option Field</button>
+                </div>
+                <div id="modal-options-list" class="space-y-3">
+                    <!-- Dynamic rows here -->
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3 mt-8">
+                <button onclick="closeModal('editVehicleModal')" class="px-4 py-2 text-slate-400 hover:text-white transition-colors">Cancel</button>
+                <button onclick="saveVehicleInfo()" class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Record Modal (CRUD for categories) -->
+    <div id="recordModal" class="modal-overlay hidden">
+        <div class="modal-box !max-w-6xl">
+            <div class="flex justify-between items-center mb-8 pb-4 border-b border-slate-800">
+                <h2 id="recordModalTitle" class="text-2xl font-black text-white tracking-tight">New Record</h2>
+                <div class="flex items-center gap-4">
+                    <button onclick="saveRecord()" class="btn-primary !py-2 !px-6 shadow-lg shadow-blue-900/20">Save Record</button>
+                    <button onclick="closeModal('recordModal')" class="p-2 text-slate-500 hover:text-white transition-colors bg-slate-800/50 rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <input type="hidden" id="edit_record_id">
+            <div id="record-fields" class="grid grid-cols-2 gap-4 mb-6">
+                <!-- Dynamic fields based on category -->
+            </div>
+            <div id="editor-container" class="hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Rich Text Editor</label>
+                    <label class="text-xs font-bold text-blue-400 uppercase tracking-widest block">Real-time Preview</label>
+                </div>
+                <div class="grid grid-cols-2 gap-4 h-[450px]">
+                    <div class="h-full overflow-hidden border border-slate-700/50 rounded-xl bg-[#0f172a]">
+                        <div id="quill-editor" class="h-full"></div>
+                    </div>
+                    <div id="quill-preview" class="h-full overflow-y-auto p-8 bg-slate-900/50 border border-slate-700/50 rounded-xl prose prose-invert prose-sm max-w-none text-slate-300">
+                        <p class="text-slate-600 italic">Preview will appear here...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3 mt-8 pt-6 border-t border-slate-800">
+                <button onclick="closeModal('recordModal')" class="px-4 py-2 text-slate-400 hover:text-white transition-colors">Cancel</button>
+                <button onclick="saveRecord()" class="btn-primary">Save Record</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const vehicleId = "{{ vehicle._id }}";
+        let vehicleOptions = JSON.parse('{{ vehicle.options | tojson | safe }}');
+        let currentCategory = 'id';
+        let quill = null;
+
+        // Init Quill with Cloudinary Upload
+        document.addEventListener('DOMContentLoaded', () => {
+            quill = new Quill('#quill-editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: {
+                        container: [
+                            [{ 'header': [1, 2, 3, false] }],
+                            ['bold', 'italic', 'underline', 'strike'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['link', 'image', 'clean'],
+                            [{ 'color': [] }, { 'background': [] }],
+                            [{ 'align': [] }]
+                        ],
+                        handlers: {
+                            image: quillImageHandler
+                        }
+                    }
+                }
+            });
+
+            // Real-time Preview Sync
+            quill.on('text-change', () => {
+                const preview = document.getElementById('quill-preview');
+                if (preview) {
+                    preview.innerHTML = quill.root.innerHTML;
+                }
+            });
+        });
+
+        async function quillImageHandler() {
+            const input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.click();
+
+            input.onchange = async () => {
+                const file = input.files[0];
+                if (!file) return;
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                const range = quill.getSelection(true);
                 
-                const response = await fetch(`/api/manual/${vehicleId}`);
-                const manuals = await response.json();
-                loader.classList.add('hidden');
+                // Show a placeholder or loading?
+                try {
+                    const res = await fetch('/api/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await res.json();
+                    if (data.url) {
+                        quill.insertEmbed(range.index, 'image', data.url);
+                        quill.setSelection(range.index + 1);
+                    } else {
+                        alert('Upload failed: ' + (data.detail || 'Unknown error'));
+                    }
+                } catch (e) {
+                    console.error('Upload failed', e);
+                    alert('Upload failed. Check console for details.');
+                }
+            };
+        }
+
+        async function switchTab(tabId) {
+            currentCategory = tabId;
+            document.querySelectorAll('#tab-bar button').forEach(b => b.classList.remove('active-tab'));
+            document.getElementById(`tab-${tabId}`).classList.add('active-tab');
+
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            
+            if (tabId === 'id') {
+                document.getElementById('pane-id').classList.add('active');
+            } else {
+                document.getElementById('pane-category').classList.add('active');
+                document.getElementById('category-title').textContent = tabId.replace('_', ' ');
+                loadCategoryData();
+            }
+        }
+
+        async function loadCategoryData() {
+            const container = document.getElementById('category-data');
+            container.innerHTML = '<div class="text-center py-20 text-slate-500 animate-pulse font-bold tracking-widest uppercase text-xs">Loading data...</div>';
+            
+            try {
+                const res = await fetch(`/api/data/${currentCategory}/${vehicleId}`);
+                const data = await res.json();
                 
-                if (manuals.length === 0) {
-                    container.innerHTML = '<p class="text-slate-500 italic text-center py-12">No manual articles extracted.</p>';
+                if (data.length === 0) {
+                    container.innerHTML = `<div class="glass rounded-3xl p-20 text-center border border-slate-800"><p class="text-slate-500 italic">No records found for this category.</p></div>`;
                     return;
                 }
                 
-                container.innerHTML = manuals.map(m => `
-                    <div class="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden">
-                        <button onclick="toggleElement('${m._id}')" class="w-full px-6 py-4 flex items-center justify-between hover:bg-slate-700/50 transition-colors">
-                            <div class="text-left">
-                                <p class="text-[10px] text-blue-400 font-black uppercase tracking-widest mb-1">${m.path.join(' > ')}</p>
-                                <h4 class="text-lg font-bold text-white">${m.title}</h4>
-                            </div>
-                            <svg id="icon-${m._id}" class="w-5 h-5 text-slate-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div id="content-${m._id}" class="hidden p-6 border-t border-slate-700 bg-slate-900/30">
-                            <div class="prose prose-invert max-w-none text-slate-300">${m.content_html}</div>
-                            ${m.images ? `<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                                ${m.images.map(img => `<img src="${img.cloudinary_url || img.original_src}" class="rounded-xl border border-slate-700 w-full" onclick="window.open(this.src)">`).join('')}
-                            </div>` : ''}
+                renderCategoryList(data);
+            } catch (e) {
+                container.innerHTML = `<div class="text-red-400 text-center py-10">Error loading data: ${e.message}</div>`;
+            }
+        }
+
+        function renderCategoryList(data) {
+            const container = document.getElementById('category-data');
+            container.innerHTML = '';
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass rounded-3xl overflow-hidden border border-slate-800 shadow-xl';
+                
+                let title = item.title || item.procedure || item.system || item.component || item.DTC || 'Record Entry';
+                let contentSummary = '';
+                
+                // Show a table if it has complex fields
+                let detailsHtml = '';
+                const skipKeys = ['_id', 'vehicle_id', 'timestamp', 'content_html', 'images', 'specs', 'path'];
+                const fields = Object.keys(item).filter(k => !skipKeys.includes(k));
+                
+                if (fields.length > 0) {
+                    detailsHtml = `
+                        <div class="px-8 py-4 bg-slate-900/50 grid grid-cols-2 md:grid-cols-3 gap-4 border-b border-slate-800">
+                            ${fields.map(f => `<div><p class="text-[10px] text-slate-500 font-bold uppercase mb-1">${f.replace('_', ' ')}</p><p class="text-sm text-slate-300 font-medium">${item[f] || '-'}</p></div>`).join('')}
+                        </div>`;
+                }
+
+                card.innerHTML = `
+                    <div class="px-8 py-5 flex justify-between items-center bg-slate-800/30">
+                        <h4 class="text-lg font-bold text-white">${title}</h4>
+                        <div class="flex gap-2">
+                            <button onclick="editRecord('${item._id}')" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg text-xs font-bold transition-all">Edit</button>
+                            <button onclick="deleteRecord('${item._id}')" class="px-3 py-1 bg-red-900/30 hover:bg-red-900/50 text-red-400 rounded-lg text-xs font-bold transition-all">Delete</button>
                         </div>
-                    </div>`).join('');
+                    </div>
+                    ${detailsHtml}
+                    ${item.content_html ? `<div class="p-8 prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed">${item.content_html}</div>` : ''}
+                    ${item.image_url || item.diagram_url ? `
+                        <div class="p-8 border-t border-slate-800 bg-black/20 text-center">
+                            <img src="${item.image_url || item.diagram_url}" class="max-w-full rounded-2xl mx-auto border border-slate-700 shadow-2xl cursor-zoom-in" onclick="window.open(this.src)">
+                        </div>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // ── RECORD CRUD ───────────────────────────────────────────────────
+        
+        const FIELD_CONFIG = {
+            tsbs: ['title'],
+            specs: ['Component', 'Specification', 'Condition'],
+            adas: ['System', 'Component', 'Function'],
+            fluids: ['Fluid_Type', 'Capacity', 'Notes'],
+            tires: ['Position', 'Pressure', 'Torque'],
+            resets: ['procedure'],
+            dtcs: ['DTC', 'Description', 'Possible_Cause'],
+            wiring: ['system', 'diagram_url'],
+            locations: ['component', 'image_url', 'location_text'],
+            tests: ['test_name', 'result', 'procedure'],
+            manual: ['title', 'section']
+        };
+
+        function openAddRecordModal() {
+            document.getElementById('recordModalTitle').textContent = `Add ${currentCategory.toUpperCase()}`;
+            document.getElementById('edit_record_id').value = '';
+            setupRecordFields();
+            document.getElementById('recordModal').classList.remove('hidden');
+        }
+
+        async function editRecord(id) {
+            const res = await fetch(`/api/data/${currentCategory}/${vehicleId}`); // In real app, maybe fetch by record ID
+            const list = await res.json();
+            const item = list.find(i => i._id === id);
+            
+            document.getElementById('recordModalTitle').textContent = `Edit ${currentCategory.toUpperCase()}`;
+            document.getElementById('edit_record_id').value = id;
+            setupRecordFields(item);
+            document.getElementById('recordModal').classList.remove('hidden');
+        }
+
+        function setupRecordFields(data = null) {
+            const container = document.getElementById('record-fields');
+            const editorPane = document.getElementById('editor-container');
+            container.innerHTML = `
+                <div class="col-span-2">
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Record Title / Identifier</label>
+                    <input type="text" id="record-title-input" class="form-input" placeholder="e.g. Spark Plug Gap, DTC P0300, Procedure Name..." value="${data ? (data.title || data.procedure || data.system || data.component || data.DTC || '') : ''}">
+                </div>
+            `;
+            
+            editorPane.classList.remove('hidden');
+            const content = data ? (data.content_html || '') : '';
+            quill.root.innerHTML = content;
+            document.getElementById('quill-preview').innerHTML = content || '<p class="text-slate-600 italic">Preview will appear here...</p>';
+        }
+
+        async function saveRecord() {
+            const id = document.getElementById('edit_record_id').value;
+            const title = document.getElementById('record-title-input').value.trim();
+            
+            if (!title) {
+                alert('Please provide a title for this record');
+                return;
             }
 
-            function toggleElement(id) {
-                const content = document.getElementById(`content-${id}`);
-                const icon = document.getElementById(`icon-${id}`);
-                content.classList.toggle('hidden');
-                if (icon) icon.classList.toggle('rotate-180');
+            const payload = {
+                title: title,
+                content_html: quill.root.innerHTML
+            };
+
+            const url = id ? `/api/data/${currentCategory}/${id}` : `/api/data/${currentCategory}/${vehicleId}`;
+            const method = id ? 'PUT' : 'POST';
+            
+            const res = await fetch(url, {
+                method,
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            });
+            
+            if (res.ok) {
+                closeModal('recordModal');
+                loadCategoryData();
+            } else {
+                alert('Error saving record');
             }
-        </script>
+        }
 
-        <style>
-            .no-scrollbar::-webkit-scrollbar { display: none; }
-            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-            .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-            .prose th, .prose td { border: 1px solid #334155; padding: 0.5rem; text-align: left; }
-            .prose th { background: #1e293b; }
-        </style>
+        async function deleteRecord(id) {
+            if (!confirm('Are you sure you want to delete this record?')) return;
+            const res = await fetch(`/api/data/${currentCategory}/${id}`, { method: 'DELETE' });
+            if (res.ok) loadCategoryData();
+        }
 
-        <div class="mt-12 p-8 glass rounded-2xl border-slate-800/50 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-blue-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        // ── BASIC INFO & OPTIONS ─────────────────────────────────────────
+        
+        function openEditVehicleModal() {
+            document.getElementById('editVehicleModal').classList.remove('hidden');
+            renderModalOptions();
+        }
+
+        function renderModalOptions() {
+            const container = document.getElementById('modal-options-list');
+            container.innerHTML = '';
+            
+            const standardFields = ['FUEL TYPE', 'ENGINE CODE', 'BODY STYLE', 'DRIVE TYPE', 'TRANSFER CASE TYPE', 'TRANSMISSION CONTROL TYPE', 'TRANSMISSION CODE'];
+            
+            let existingOpts = [];
+            if (Array.isArray(vehicleOptions)) {
+                existingOpts = vehicleOptions;
+            } else if (typeof vehicleOptions === 'object' && vehicleOptions !== null) {
+                existingOpts = Object.entries(vehicleOptions).map(([key, value]) => ({ key, value }));
+            }
+
+            const optMap = {};
+            existingOpts.forEach(o => {
+                if (!optMap[o.key]) optMap[o.key] = [];
+                optMap[o.key].push(o.value);
+            });
+
+            // 1. Add Standard Fields
+            standardFields.forEach(field => {
+                const values = optMap[field] || [''];
+                addOptionGroup(field, values);
+                delete optMap[field];
+            });
+
+            // 2. Add remaining custom fields
+            Object.keys(optMap).forEach(field => {
+                addOptionGroup(field, optMap[field]);
+            });
+        }
+
+        function addOptionGroup(key = '', values = ['']) {
+            const container = document.getElementById('modal-options-list');
+            if (container.querySelector('p.italic')) container.innerHTML = '';
+
+            const group = document.createElement('div');
+            group.className = 'flex gap-4 p-4 bg-slate-900/30 rounded-2xl border border-slate-800/50 option-group mb-3';
+            group.innerHTML = `
+                <div class="flex-[2]">
+                    <input type="text" placeholder="Field Name" class="form-input opt-key font-bold text-blue-400" value="${key}">
                 </div>
-                <div>
-                    <p class="text-white font-bold">Data Accuracy</p>
-                    <p class="text-sm text-slate-500">All data shown is retrieved directly from the MongoDB clusters populated by the scraper.</p>
+                <div class="flex-[3] space-y-2">
+                    <div class="values-container space-y-2">
+                        ${values.map(v => `
+                            <div class="flex gap-2 value-row">
+                                <input type="text" placeholder="Value" class="form-input opt-val" value="${v}">
+                                <button onclick="removeValueRow(this)" class="p-2 text-slate-500 hover:text-red-500 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                </button>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <button onclick="addValueField(this)" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-400 transition-colors flex items-center">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        Add Another Value
+                    </button>
                 </div>
-            </div>
-            <button onclick="window.print()" class="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-bold transition-all border border-slate-700">
-                Print Report
-            </button>
-        </div>
-    </main>
+                <div class="flex items-start">
+                    <button onclick="this.parentElement.parentElement.remove()" class="p-2 text-red-900/50 hover:text-red-500 transition-colors" title="Delete Group">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </div>
+            `;
+            container.appendChild(group);
+        }
+
+        function addValueField(btn) {
+            const container = btn.parentElement.querySelector('.values-container');
+            const row = document.createElement('div');
+            row.className = 'flex gap-2 value-row';
+            row.innerHTML = `
+                <input type="text" placeholder="Value" class="form-input opt-val" value="">
+                <button onclick="removeValueRow(this)" class="p-2 text-slate-500 hover:text-red-500 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            `;
+            container.appendChild(row);
+            row.querySelector('input').focus();
+        }
+
+        function removeValueRow(btn) {
+            const container = btn.parentElement.parentElement;
+            if (container.children.length > 1) {
+                btn.parentElement.remove();
+            } else {
+                btn.parentElement.querySelector('input').value = '';
+            }
+        }
+        
+        async function saveVehicleInfo() {
+            const payload = {
+                year: document.getElementById('edit_v_year').value,
+                make: document.getElementById('edit_v_make').value,
+                model: document.getElementById('edit_v_model').value,
+                engine: document.getElementById('edit_v_engine').value,
+                submodel: document.getElementById('edit_v_submodel').value,
+            };
+
+            const options = [];
+            document.querySelectorAll('.option-group').forEach(group => {
+                const key = group.querySelector('.opt-key').value.trim();
+                if (!key) return;
+                
+                group.querySelectorAll('.opt-val').forEach(input => {
+                    const value = input.value.trim();
+                    if (value) options.push({ key, value });
+                });
+            });
+            payload.options = options;
+
+            const res = await fetch(`/api/vehicles/${vehicleId}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) window.location.reload();
+            else alert('Error saving vehicle info');
+        }
+
+        function addOptionRow() {
+            addOptionGroup('', ['']);
+        }
+
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    </script>
 </body>
 </html>

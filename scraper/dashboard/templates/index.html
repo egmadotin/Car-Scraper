@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,186 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #0f172a; color: #f1f5f9; }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .nav-item { cursor: pointer; transition: all 0.2s ease; border-left: 2px solid transparent; }
-        .nav-item:hover { background: rgba(59, 130, 246, 0.1); border-left-color: rgba(59, 130, 246, 0.5); padding-left: 1rem; }
-        .nav-item.active { background: rgba(59, 130, 246, 0.2); border-left-color: #3b82f6; padding-left: 1.25rem; font-weight: bold; color: #60a5fa; }
-        .column-border { border-right: 1px solid rgba(255, 255, 255, 0.05); }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 2px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-left-color: rgba(59, 130, 246, 0.5);
+            padding-left: 1rem;
+        }
+
+        .nav-item.active {
+            background: rgba(59, 130, 246, 0.2);
+            border-left-color: #3b82f6;
+            padding-left: 1.25rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        .column-border {
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-box {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-input {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 0.75rem;
+            padding: 0.6rem 1rem;
+            color: #f1f5f9;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #3b82f6;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            border-radius: 0.75rem;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-edit {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-edit:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
     </style>
 </head>
+
 <body class="h-screen flex flex-col overflow-hidden">
+
+    <!-- NAV -->
     <nav class="glass border-b border-slate-800 flex-none">
         <div class="max-w-[1600px] mx-auto px-6">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/20">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                    <div
+                        class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0">
+                            </path>
+                        </svg>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight text-white">CarChat <span class="text-blue-500 text-sm font-medium ml-1">Explorer</span></span>
+                    <span class="text-2xl font-bold tracking-tight text-white">CarChat <span
+                            class="text-blue-500 text-sm font-medium ml-1">Explorer</span></span>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <div class="flex items-center bg-slate-800 rounded-xl px-4 py-1 border border-slate-700">
-                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest mr-3">Target Year</span>
-                        <input type="text" id="targetYear" placeholder="e.g. 2024" class="bg-transparent border-none outline-none text-white text-sm w-20 font-bold placeholder:text-slate-600">
-                    </div>
-                    <button id="startBtn" onclick="startExtraction()" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all flex items-center shadow-lg shadow-blue-900/40">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        Start Scraper
+                <div class="flex items-center space-x-3">
+                    <!-- <div class="flex items-center bg-slate-800 rounded-xl px-4 py-1 border border-slate-700">
+                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest mr-3">Target Year</span>
+                    <input type="text" id="targetYear" placeholder="e.g. 2024" class="bg-transparent border-none outline-none text-white text-sm w-20 font-bold placeholder:text-slate-600">
+                </div>
+                <button id="startBtn" onclick="startExtraction()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all flex items-center shadow-lg shadow-blue-900/40 text-sm">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    Start Scraper
+                </button>-->
+                    <button onclick="openAddVehicleModal()"
+                        class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-semibold transition-all flex items-center text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                        Add Vehicle
                     </button>
-                    <button onclick="window.location.reload()" class="p-2.5 text-slate-400 hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    <button onclick="window.location.reload()"
+                        class="p-2.5 text-slate-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                            </path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -50,73 +196,197 @@
 
     <div id="statusMsg" class="max-w-7xl mx-auto mt-2 hidden p-3 rounded-xl text-xs font-medium flex-none"></div>
 
+    <!-- MAIN COLUMNS -->
     <main class="flex-1 flex min-h-0 overflow-hidden">
-        <!-- Year Column -->
         <div class="w-40 column-border overflow-y-auto p-4 bg-slate-900/50 scroll-smooth">
-            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">Year</h3>
+            <div class="flex justify-between items-center mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">
+                <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Year</h3>
+                <button onclick="openAddVehicleModal('year')"
+                    class="text-slate-500 hover:text-blue-500 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
             <div id="yearList" class="space-y-1">
                 {% for year in years %}
-                <div class="nav-item px-3 py-2 rounded-lg text-sm font-medium text-slate-300" onclick="loadMakes('{{ year }}', this)">{{ year }}</div>
+                <div class="nav-item group px-3 py-2 rounded-lg text-sm font-medium text-slate-300 flex justify-between items-center cursor-pointer"
+                    onclick="loadMakes('{{ year }}', this)">
+                    <span class="truncate">{{ year }}</span>
+                    <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="event.stopPropagation(); editHierarchy('year', '{{ year }}')"
+                            class="p-1 hover:text-blue-400">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button onclick="event.stopPropagation(); deleteHierarchy('year', '{{ year }}')"
+                            class="p-1 hover:text-red-400">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
 
-        <!-- Make Column -->
         <div class="w-56 column-border overflow-y-auto p-4 scroll-smooth">
-            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">Make</h3>
+            <div class="flex justify-between items-center mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">
+                <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Make</h3>
+                <button onclick="openAddVehicleModal('make')"
+                    class="text-slate-500 hover:text-blue-500 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
             <div id="makeList" class="space-y-1">
                 <div class="text-xs text-slate-600 px-2 italic">Select year...</div>
             </div>
         </div>
 
-        <!-- Model Column -->
         <div class="w-64 column-border overflow-y-auto p-4 bg-slate-900/30 scroll-smooth">
-            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">Model</h3>
+            <div class="flex justify-between items-center mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">
+                <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Model</h3>
+                <button onclick="openAddVehicleModal('model')"
+                    class="text-slate-500 hover:text-blue-500 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
             <div id="modelList" class="space-y-1">
                 <div class="text-xs text-slate-600 px-2 italic">Select make...</div>
             </div>
         </div>
 
-        <!-- Engine Column -->
         <div class="w-64 column-border overflow-y-auto p-4 scroll-smooth">
-            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">Engine</h3>
+            <div class="flex justify-between items-center mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">
+                <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Engine</h3>
+                <button onclick="openAddVehicleModal('engine')"
+                    class="text-slate-500 hover:text-blue-500 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
             <div id="engineList" class="space-y-1">
                 <div class="text-xs text-slate-600 px-2 italic">Select model...</div>
             </div>
         </div>
 
-        <!-- Submodel & Link Column -->
         <div class="flex-1 overflow-y-auto p-4 bg-slate-900/50 scroll-smooth">
-            <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">Submodel & Options</h3>
+            <div class="flex justify-between items-center mb-4 px-2 sticky top-0 bg-[#0f172a] py-1">
+                <h3 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Submodel & Options</h3>
+                <button onclick="openAddVehicleModal('submodel')"
+                    class="text-slate-500 hover:text-blue-500 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
             <div id="submodelList" class="space-y-3">
                 <div class="text-xs text-slate-600 px-2 italic">Select engine...</div>
             </div>
         </div>
     </main>
 
+    <!-- ═══════ ADD / EDIT VEHICLE MODAL ═══════ -->
+    <div id="vehicleModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-xl font-bold text-white">Add Vehicle</h2>
+                <button onclick="closeVehicleModal()" class="text-slate-500 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <input type="hidden" id="editVehicleId">
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Year
+                            *</label>
+                        <input id="v_year" type="text" placeholder="2024" class="form-input">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Make
+                            *</label>
+                        <input id="v_make" type="text" placeholder="Toyota" class="form-input">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Model
+                            *</label>
+                        <input id="v_model" type="text" placeholder="Camry" class="form-input">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Engine
+                            *</label>
+                        <input id="v_engine" type="text" placeholder="2.5L" class="form-input">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 block">Submodel
+                        *</label>
+                    <input id="v_submodel" type="text" placeholder="LE / XLE / SE" class="form-input">
+                </div>
+            </div>
+            <div id="modalError" class="hidden mt-3 text-xs text-red-400 bg-red-900/20 rounded-lg px-3 py-2"></div>
+            <div class="flex justify-end gap-3 mt-6">
+                <button onclick="closeVehicleModal()"
+                    class="px-4 py-2 text-slate-400 hover:text-white text-sm transition-colors">Cancel</button>
+                <button id="saveVehicleBtn" onclick="saveVehicle()" class="btn-primary">Save Vehicle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════ DELETE CONFIRM MODAL ═══════ -->
+    <div id="deleteModal" class="modal-overlay hidden">
+        <div class="modal-box max-w-sm text-center">
+            <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                    </path>
+                </svg>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">Delete Vehicle?</h2>
+            <p class="text-slate-400 text-sm mb-6">This will permanently delete the vehicle and <span
+                    class="text-red-400 font-bold">all associated data</span> (TSBs, specs, manuals, etc.).</p>
+            <input type="hidden" id="deleteVehicleId">
+            <div class="flex gap-3 justify-center">
+                <button onclick="closeDeleteModal()"
+                    class="px-5 py-2 text-slate-400 hover:text-white text-sm transition-colors border border-slate-700 rounded-xl">Cancel</button>
+                <button onclick="confirmDeleteVehicle()"
+                    class="px-5 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-sm font-bold transition-all">Delete
+                    Forever</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        let selectedYear = '';
-        let selectedMake = '';
-        let selectedModel = '';
-        let selectedEngine = '';
+        let selectedYear = '', selectedMake = '', selectedModel = '', selectedEngine = '';
 
         async function loadMakes(year, el) {
             selectedYear = year;
             updateActive('yearList', el);
             clearLists(['makeList', 'modelList', 'engineList', 'submodelList']);
-            
             const list = document.getElementById('makeList');
             list.innerHTML = '<div class="text-xs text-blue-500 px-2 animate-pulse">Loading makes...</div>';
-            
-            const res = await fetch(`/api/makes/${year}`);
-            const data = await res.json();
-            
+            const data = await (await fetch(`/api/makes/${year}`)).json();
             list.innerHTML = '';
             data.forEach(make => {
-                const div = document.createElement('div');
-                div.className = 'nav-item px-3 py-2 rounded-lg text-sm font-medium text-slate-300';
-                div.textContent = make;
-                div.onclick = (e) => loadModels(make, div);
+                const div = mkNavItem(make, () => loadModels(make, div), 'make');
                 list.appendChild(div);
             });
         }
@@ -125,19 +395,12 @@
             selectedMake = make;
             updateActive('makeList', el);
             clearLists(['modelList', 'engineList', 'submodelList']);
-            
             const list = document.getElementById('modelList');
             list.innerHTML = '<div class="text-xs text-blue-500 px-2 animate-pulse">Loading models...</div>';
-            
-            const res = await fetch(`/api/models/${selectedYear}/${make}`);
-            const data = await res.json();
-            
+            const data = await (await fetch(`/api/models/${selectedYear}/${make}`)).json();
             list.innerHTML = '';
             data.forEach(model => {
-                const div = document.createElement('div');
-                div.className = 'nav-item px-3 py-2 rounded-lg text-sm font-medium text-slate-300';
-                div.textContent = model;
-                div.onclick = (e) => loadEngines(model, div);
+                const div = mkNavItem(model, () => loadEngines(model, div), 'model');
                 list.appendChild(div);
             });
         }
@@ -146,19 +409,12 @@
             selectedModel = model;
             updateActive('modelList', el);
             clearLists(['engineList', 'submodelList']);
-            
             const list = document.getElementById('engineList');
             list.innerHTML = '<div class="text-xs text-blue-500 px-2 animate-pulse">Loading engines...</div>';
-            
-            const res = await fetch(`/api/engines/${selectedYear}/${selectedMake}/${model}`);
-            const data = await res.json();
-            
+            const data = await (await fetch(`/api/engines/${selectedYear}/${selectedMake}/${model}`)).json();
             list.innerHTML = '';
             data.forEach(engine => {
-                const div = document.createElement('div');
-                div.className = 'nav-item px-3 py-2 rounded-lg text-sm font-medium text-slate-300';
-                div.textContent = engine;
-                div.onclick = (e) => loadSubmodels(engine, div);
+                const div = mkNavItem(engine, () => loadSubmodels(engine, div), 'engine');
                 list.appendChild(div);
             });
         }
@@ -167,31 +423,47 @@
             selectedEngine = engine;
             updateActive('engineList', el);
             clearLists(['submodelList']);
-            
             const list = document.getElementById('submodelList');
             list.innerHTML = '<div class="text-xs text-blue-500 px-2 animate-pulse">Loading configurations...</div>';
-            
-            const res = await fetch(`/api/submodels/${selectedYear}/${selectedMake}/${selectedModel}/${engine}`);
-            const data = await res.json();
-            
+            const data = await (await fetch(`/api/submodels/${selectedYear}/${selectedMake}/${selectedModel}/${engine}`)).json();
             list.innerHTML = '';
             data.forEach(v => {
-                const a = document.createElement('a');
-                a.href = `/vehicle/${v.id}`;
-                a.className = 'block p-4 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-800 transition-all group';
-                a.innerHTML = `
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 block">Submodel</span>
-                            <span class="text-lg font-bold text-white group-hover:text-blue-400">${v.submodel}</span>
-                        </div>
-                        <div class="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                const card = document.createElement('div');
+                card.className = 'p-4 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-800 transition-all group';
+                card.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <a href="/vehicle/${v.id}" class="flex-1">
+                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 block">Submodel</span>
+                        <span class="text-lg font-bold text-white group-hover:text-blue-400">${v.submodel}</span>
+                    </a>
+                    <div class="flex items-center gap-2 ml-4">
+                        <button class="btn-edit" onclick="openEditVehicleModal('${v.id}')">Edit</button>
+                        <button class="btn-danger" onclick="openDeleteModal('${v.id}')">Delete</button>
+                        <a href="/vehicle/${v.id}" class="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity p-1">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </div>
+                        </a>
                     </div>
-                `;
-                list.appendChild(a);
+                </div>`;
+                list.appendChild(card);
             });
+        }
+
+        function mkNavItem(text, onclick, level) {
+            const div = document.createElement('div');
+            div.className = 'nav-item group px-3 py-2 rounded-lg text-sm font-medium text-slate-300 flex justify-between items-center cursor-pointer';
+            div.innerHTML = `
+            <span class="truncate">${text}</span>
+            <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onclick="event.stopPropagation(); editHierarchy('${level}', '${text}')" class="p-1 hover:text-blue-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                </button>
+                <button onclick="event.stopPropagation(); deleteHierarchy('${level}', '${text}')" class="p-1 hover:text-red-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                </button>
+            </div>
+        `;
+            div.onclick = onclick;
+            return div;
         }
 
         function updateActive(listId, el) {
@@ -199,30 +471,172 @@
             el.classList.add('active');
         }
 
-        function clearLists(listIds) {
-            listIds.forEach(id => {
-                document.getElementById(id).innerHTML = `<div class="text-xs text-slate-600 px-2 italic">Select parent...</div>`;
-            });
+        function clearLists(ids) {
+            ids.forEach(id => document.getElementById(id).innerHTML = '<div class="text-xs text-slate-600 px-2 italic">Select parent...</div>');
         }
 
+        async function editHierarchy(level, oldValue) {
+            const newValue = prompt(`Enter new value for ${level} "${oldValue}":`, oldValue);
+            if (!newValue || newValue === oldValue) return;
+
+            const payload = { level, oldValue, newValue };
+            if (level === 'make') payload.year = selectedYear;
+            if (level === 'model') { payload.year = selectedYear; payload.make = selectedMake; }
+            if (level === 'engine') { payload.year = selectedYear; payload.make = selectedMake; payload.model = selectedModel; }
+
+            const res = await fetch('/api/hierarchy/update', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) window.location.reload();
+            else alert('Error updating hierarchy');
+        }
+
+        async function deleteHierarchy(level, value) {
+            if (!confirm(`Are you sure you want to delete ${level} "${value}" and ALL associated vehicles?`)) return;
+
+            const payload = { level, value };
+            if (level === 'make') payload.year = selectedYear;
+            if (level === 'model') { payload.year = selectedYear; payload.make = selectedMake; }
+            if (level === 'engine') { payload.year = selectedYear; payload.make = selectedMake; payload.model = selectedModel; }
+
+            const res = await fetch('/api/hierarchy/delete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) window.location.reload();
+            else alert('Error deleting hierarchy');
+        }
+
+        // ── VEHICLE MODAL ─────────────────────────────────────────────────────
+        function openAddVehicleModal(column) {
+            document.getElementById('modalTitle').textContent = 'Add Vehicle';
+            document.getElementById('editVehicleId').value = '';
+
+            // Reset and Pre-fill
+            const fields = ['year', 'make', 'model', 'engine', 'submodel'];
+            fields.forEach(f => {
+                const input = document.getElementById(`v_${f}`);
+                input.value = '';
+                // Hide by default
+                input.parentElement.classList.add('hidden');
+            });
+
+            // Determine which fields to show based on the column clicked
+            // If no column specified (from top nav), show all
+            const stopIndex = column ? fields.indexOf(column) : fields.length - 1;
+
+            for (let i = 0; i <= stopIndex; i++) {
+                const f = fields[i];
+                const input = document.getElementById(`v_${f}`);
+                input.parentElement.classList.remove('hidden');
+
+                // Pre-fill from current selection if available
+                if (f === 'year') input.value = selectedYear || '';
+                if (f === 'make') input.value = selectedMake || '';
+                if (f === 'model') input.value = selectedModel || '';
+                if (f === 'engine') input.value = selectedEngine || '';
+            }
+
+            // Handle grid layout for visibility
+            // year/make model/engine are in grid-cols-2 groups
+            const group1 = document.getElementById('v_year').parentElement.parentElement;
+            const group2 = document.getElementById('v_model').parentElement.parentElement;
+
+            // Always show group 1 if year or make is visible
+            group1.classList.remove('hidden');
+            // Only show group 2 if model or engine is visible
+            if (stopIndex < 2) group2.classList.add('hidden');
+            else group2.classList.remove('hidden');
+
+            hideModalError();
+            document.getElementById('vehicleModal').classList.remove('hidden');
+        }
+
+        async function openEditVehicleModal(vehicleId) {
+            const v = await (await fetch(`/api/vehicles/${vehicleId}`)).json();
+            document.getElementById('modalTitle').textContent = 'Edit Vehicle';
+            document.getElementById('editVehicleId').value = vehicleId;
+
+            // Show all fields for editing
+            ['year', 'make', 'model', 'engine', 'submodel'].forEach(f => {
+                const input = document.getElementById(`v_${f}`);
+                input.value = v[f] || '';
+                input.parentElement.classList.remove('hidden');
+            });
+
+            // Show all groups
+            document.getElementById('v_year').parentElement.parentElement.classList.remove('hidden');
+            document.getElementById('v_model').parentElement.parentElement.classList.remove('hidden');
+
+            hideModalError();
+            document.getElementById('vehicleModal').classList.remove('hidden');
+        }
+
+        function closeVehicleModal() { document.getElementById('vehicleModal').classList.add('hidden'); }
+
+        async function saveVehicle() {
+            const id = document.getElementById('editVehicleId').value;
+            const payload = {
+                year: document.getElementById('v_year').value.trim(),
+                make: document.getElementById('v_make').value.trim(),
+                model: document.getElementById('v_model').value.trim(),
+                engine: document.getElementById('v_engine').value.trim(),
+                submodel: document.getElementById('v_submodel').value.trim(),
+            };
+
+            // Only validate visible fields
+            const fields = ['year', 'make', 'model', 'engine', 'submodel'];
+            for (const f of fields) {
+                const input = document.getElementById(`v_${f}`);
+                if (!input.parentElement.classList.contains('hidden')) {
+                    if (!payload[f]) { showModalError(`Field "${f}" is required`); return; }
+                }
+            }
+            const url = id ? `/api/vehicles/${id}` : '/api/vehicles';
+            const method = id ? 'PUT' : 'POST';
+            const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+            const data = await res.json();
+            if (!res.ok) { showModalError(data.detail || 'Error saving vehicle'); return; }
+            closeVehicleModal();
+            window.location.reload();
+        }
+
+        // ── DELETE MODAL ──────────────────────────────────────────────────────
+        function openDeleteModal(vehicleId) {
+            document.getElementById('deleteVehicleId').value = vehicleId;
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+        function closeDeleteModal() { document.getElementById('deleteModal').classList.add('hidden'); }
+
+        async function confirmDeleteVehicle() {
+            const id = document.getElementById('deleteVehicleId').value;
+            await fetch(`/api/vehicles/${id}`, { method: 'DELETE' });
+            closeDeleteModal();
+            window.location.reload();
+        }
+
+        function showModalError(msg) {
+            const el = document.getElementById('modalError');
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+        function hideModalError() { document.getElementById('modalError').classList.add('hidden'); }
+
+        // ── SCRAPER ───────────────────────────────────────────────────────────
         async function startExtraction() {
             const btn = document.getElementById('startBtn');
             const status = document.getElementById('statusMsg');
             const year = document.getElementById('targetYear').value;
-            
             btn.disabled = true;
             btn.innerHTML = '<svg class="animate-spin h-4 w-4 mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Initializing...';
-
             try {
-                const response = await fetch('/api/scrape', { 
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ year: year })
-                });
-                const result = await response.json();
-                
+                const res = await fetch('/api/scrape', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ year }) });
+                const result = await res.json();
                 status.classList.remove('hidden', 'bg-red-900/20', 'text-red-400', 'bg-green-900/20', 'text-green-400');
-                if (response.ok) {
+                if (res.ok) {
                     status.classList.add('bg-green-900/20', 'text-green-400', 'border', 'border-green-500/20');
                     status.textContent = result.message + '. Refresh in a few minutes.';
                 } else {
@@ -238,6 +652,12 @@
                 btn.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> Start Scraper';
             }
         }
+
+        // Close modals on overlay click
+        ['vehicleModal', 'deleteModal'].forEach(id => {
+            document.getElementById(id).addEventListener('click', e => { if (e.target.id === id) document.getElementById(id).classList.add('hidden'); });
+        });
     </script>
 </body>
+
 </html>
