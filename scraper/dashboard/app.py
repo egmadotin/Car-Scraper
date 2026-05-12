@@ -12,6 +12,15 @@ except ImportError:
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Configure Cloudinary
+import cloudinary
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET"),
+    secure=True
+)
+
 app = FastAPI(title="Vehicle Hierarchy Explorer")
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
