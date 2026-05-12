@@ -3,6 +3,9 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import os
 import uvicorn
+import secrets
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi import Depends, HTTPException, status
 try:
     from .db import db
     from .routes import vehicles, data, upload
@@ -21,7 +24,27 @@ cloudinary.config(
     secure=True
 )
 
-app = FastAPI(title="Vehicle Hierarchy Explorer")
+security = HTTPBasic()
+
+def authenticate(credentials: HTTPBasicCredentials = Depends(security)):
+    correct_username = os.getenv("DASHBOARD_USERNAME", "Egma")
+    correct_password = os.getenv("DASHBOARD_PASSWORD", "Carscraper@egma")
+    
+    is_correct_username = secrets.compare_digest(credentials.username, correct_username)
+    is_correct_password = secrets.compare_digest(credentials.password, correct_password)
+    
+    if not (is_correct_username and is_correct_password):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect username or password",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return credentials.username
+
+app = FastAPI(
+    title="Vehicle Hierarchy Explorer",
+    dependencies=[Depends(authenticate)]
+)
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 # Include modular routes
